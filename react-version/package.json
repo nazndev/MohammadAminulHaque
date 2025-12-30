@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "monitor": "node scripts/ranking-monitor.js"
+    "monitor": "node scripts/ranking-monitor.js",
+    "seo:automate": "node scripts/automated-seo.js",
+    "seo:optimize": "node scripts/ai-content-optimizer.js",
+    "seo:social": "node scripts/social-media-automation.js",
+    "seo:all": "node scripts/master-automation.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",

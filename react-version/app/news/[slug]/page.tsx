@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Typography, Tag, Button } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined, LinkOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllNewsArticles, getNewsArticleByUrl } from '@/lib/news';
@@ -14,9 +14,13 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const articles = getAllNewsArticles();
-  return articles.map((article) => ({
-    slug: article.url.replace('/news/', ''),
-  }));
+  return articles.map((article) => {
+    // Extract slug from URL (e.g., "/news/slug-name" -> "slug-name")
+    const slug = article.url.startsWith('/news/') 
+      ? article.url.replace('/news/', '')
+      : article.url.replace(/^\//, ''); // Remove leading slash if present
+    return { slug };
+  });
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -88,7 +92,7 @@ export default function NewsArticlePage({ params }: PageProps) {
             level={1}
             style={{
               fontSize: 'clamp(2rem, 5vw, 3rem)',
-              color: '#e2e8f0',
+              color: '#1e293b',
               marginBottom: '24px',
             }}
           >
@@ -106,13 +110,64 @@ export default function NewsArticlePage({ params }: PageProps) {
           />
         </div>
 
-        <div style={{ fontSize: '1.125rem', lineHeight: 1.9, color: '#94a3b8' }}>
+        <div style={{ fontSize: '1.125rem', lineHeight: 1.9, color: '#475569' }}>
           {article.content.split('\n').map((paragraph, index) => (
-            <Paragraph key={index} style={{ marginBottom: '24px' }}>
+            <Paragraph key={index} style={{ marginBottom: '24px', color: '#475569' }}>
               {paragraph}
             </Paragraph>
           ))}
         </div>
+
+        {/* Link to Original Source */}
+        {article.sourceUrl && (
+          <div style={{
+            marginTop: '48px',
+            padding: '24px',
+            background: '#f8fafc',
+            borderRadius: '12px',
+            border: '1px solid #e2e8f0',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+              <LinkOutlined style={{ color: '#1e3a8a', fontSize: '1.25rem' }} />
+              <Title level={4} style={{ margin: 0, color: '#1e293b' }}>
+                Original Source
+              </Title>
+            </div>
+            <Paragraph style={{ marginBottom: '16px', color: '#64748b' }}>
+              Read the original article on the source website:
+            </Paragraph>
+            <a
+              href={article.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: '#1e3a8a',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                padding: '12px 24px',
+                background: '#ffffff',
+                border: '1px solid #1e3a8a',
+                borderRadius: '8px',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#1e3a8a';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#ffffff';
+                e.currentTarget.style.color = '#1e3a8a';
+              }}
+            >
+              <span>View Original Article</span>
+              <span style={{ fontSize: '0.875rem' }}>↗</span>
+            </a>
+          </div>
+        )}
       </div>
     </>
   );

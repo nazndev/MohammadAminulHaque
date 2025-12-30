@@ -5,7 +5,8 @@ export interface NewsArticle {
   excerpt: string;
   content: string;
   image: string;
-  url: string;
+  url: string; // Internal URL on your website
+  sourceUrl?: string; // Original external source URL (if applicable)
   category: string;
 }
 

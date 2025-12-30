@@ -28,11 +28,9 @@ export default function NewsCard({ article }: NewsCardProps) {
     Recognition: { bg: '#fce7f3', text: '#9f1239' },
   };
 
-  const isExternalLink = article.url.startsWith('http://') || article.url.startsWith('https://');
-  
-  // Extract domain name from URL for display
-  const getDomainName = (url: string): string => {
-    if (!isExternalLink) return 'Read Article';
+  // Extract domain name from sourceUrl for display (if available)
+  const getDomainName = (url?: string): string => {
+    if (!url) return 'Read Article';
     try {
       const urlObj = new URL(url);
       let domain = urlObj.hostname.replace('www.', '');
@@ -49,11 +47,11 @@ export default function NewsCard({ article }: NewsCardProps) {
       if (domain.includes('thefinancialexpress.com.bd')) return 'The Financial Express';
       return domain.split('.')[0].charAt(0).toUpperCase() + domain.split('.')[0].slice(1);
     } catch {
-      return 'External Link';
+      return 'Read Article';
     }
   };
 
-  const domainName = getDomainName(article.url);
+  const sourceDomain = getDomainName(article.sourceUrl);
   const categoryColor = categoryColors[article.category] || { bg: '#f1f5f9', text: '#475569' };
 
   const cardContent = (
@@ -218,43 +216,29 @@ export default function NewsCard({ article }: NewsCardProps) {
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
               }}
-              title={isExternalLink ? article.url : domainName}
+              title={article.sourceUrl || 'Read Article'}
             >
-              {isExternalLink ? article.url : domainName}
+              {article.sourceUrl ? `Source: ${sourceDomain}` : 'Read Article'}
             </Text>
           </div>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-            color: '#1e3a8a',
-            fontSize: '0.875rem',
-            fontWeight: 600,
-            flexShrink: 0,
-          }}>
-            <span>{domainName}</span>
-            {isExternalLink && (
-              <span style={{ fontSize: '0.75rem' }}>↗</span>
-            )}
-          </div>
+          {article.sourceUrl && (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              color: '#64748b',
+              fontSize: '0.75rem',
+              flexShrink: 0,
+            }}>
+              <span>External</span>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 
-  if (isExternalLink) {
-    return (
-      <a 
-        href={article.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        style={{ textDecoration: 'none', display: 'block', height: '100%' }}
-      >
-        {cardContent}
-      </a>
-    );
-  }
-
+  // All articles now have internal URLs - link to your site's pages
   return (
     <Link href={article.url} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
       {cardContent}
