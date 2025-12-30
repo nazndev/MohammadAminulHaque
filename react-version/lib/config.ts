@@ -4,7 +4,7 @@ export const getConfig = (): { baseUrl: string; environment: 'development' | 'pr
   
   const baseUrls = {
     development: process.env.NEXT_PUBLIC_DEV_URL || 'http://localhost:3000',
-    production: 'https://mohammadaminulhaque.net'
+    production: 'https://www.mohammadaminulhaque.net'
   };
   
   return {

@@ -1,6 +1,6 @@
 import { Typography, Card, Row, Col, Divider, Timeline } from 'antd';
 import { generateSEOMetadata } from '@/components/SEO';
-import { config } from '@/lib/config';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 
 const { Title, Paragraph } = Typography;
 

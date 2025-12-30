@@ -128,7 +128,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        {/* Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID */}
+        {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
             <script
@@ -143,6 +143,8 @@ export default function RootLayout({
                   gtag('js', new Date());
                   gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
                     page_path: window.location.pathname,
+                    page_title: document.title,
+                    page_location: window.location.href,
                   });
                 `,
               }}
