@@ -83,8 +83,7 @@ export default function HomePage() {
               margin: '0 auto 48px',
             }}
           >
-            19+ years of cross-regional experience in Banking, Fintech, Strategy, Transformation & Wealth Management.
-            Internationally published researcher in Islamic Finance and Capital Markets.
+            <strong>Mohammad Aminul Haque</strong> is a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with <strong>19+ years of cross-regional experience</strong> in Banking, Fintech, Strategy, Transformation & Wealth Management. Internationally published researcher in <strong>Islamic Finance and Capital Markets</strong>, Mohammad Aminul Haque has led transformation projects for Fortune 500 companies across Australia, Singapore, Brunei, Indonesia, Malaysia, Philippines and South Asia.
           </Paragraph>
           <a href="#news" style={{ textDecoration: 'none', display: 'inline-block' }}>
             <Button

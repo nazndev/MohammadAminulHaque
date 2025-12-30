@@ -13,19 +13,31 @@ const { Header: AntHeader } = Layout;
 const menuItems = [
   { 
     key: 'home', 
-    label: <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</a> 
+    label: <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link> 
   },
   { 
     key: 'about', 
-    label: <a href="#about" style={{ textDecoration: 'none', color: 'inherit' }}>About</a> 
+    label: <Link href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link> 
+  },
+  { 
+    key: 'experience', 
+    label: <Link href="/experience" style={{ textDecoration: 'none', color: 'inherit' }}>Experience</Link> 
+  },
+  { 
+    key: 'research', 
+    label: <Link href="/research" style={{ textDecoration: 'none', color: 'inherit' }}>Research</Link> 
+  },
+  { 
+    key: 'achievements', 
+    label: <Link href="/achievements" style={{ textDecoration: 'none', color: 'inherit' }}>Achievements</Link> 
   },
   { 
     key: 'news', 
-    label: <a href="#news" style={{ textDecoration: 'none', color: 'inherit' }}>News</a> 
+    label: <Link href="/#news" style={{ textDecoration: 'none', color: 'inherit' }}>News</Link> 
   },
   { 
     key: 'contact', 
-    label: <a href="#contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</a> 
+    label: <Link href="/#contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</Link> 
   },
 ];
 

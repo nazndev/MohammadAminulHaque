@@ -5,6 +5,7 @@ import { ConfigProvider } from 'antd';
 import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import { config } from '@/lib/config';
 import { generateStructuredData } from '@/components/SEO';
 
@@ -127,12 +128,34 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        {/* Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className={inter.className} style={{ margin: 0, padding: 0 }}>
         <AntdRegistry>
           <ConfigProvider theme={theme}>
             <div style={{ minHeight: '100vh', background: '#fafafa', display: 'flex', flexDirection: 'column' }}>
               <Header />
+              <Breadcrumb />
               <main style={{ flex: 1 }}>
                 {children}
               </main>
