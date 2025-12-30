@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs (optional - you may want to commit these)
+# sitemap.xml
+# robots.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+
