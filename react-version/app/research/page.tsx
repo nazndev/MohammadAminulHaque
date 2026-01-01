@@ -1,17 +1,11 @@
+'use client';
+
 import { Typography, Card, List, Tag } from 'antd';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
-import { generateSEOMetadata } from '@/components/SEO';
 import Link from 'next/link';
 
-const { Title, Paragraph } = Typography;
-
-export const metadata = generateSEOMetadata({
-  title: 'Research & Publications - Mohammad Aminul Haque',
-  description: 'Research publications by Mohammad Aminul Haque on Islamic Finance, Sukuk bonds, and capital markets. Internationally published researcher in Islamic Finance and Capital Markets.',
-  url: '/research',
-});
-
 export default function ResearchPage() {
+  const { Title, Paragraph } = Typography;
   const publications = [
     {
       title: 'Are Islamic Bonds Different from Conventional Bonds? International Evidence from Capital Market Tests',
@@ -28,8 +22,8 @@ export default function ResearchPage() {
   ];
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '100px 24px' }}>
-      <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '100px 24px', background: '#ffffff' }}>
+      <div style={{ textAlign: 'center', marginBottom: '80px' }}>
         <Title
           level={1}
           style={{
@@ -50,47 +44,87 @@ export default function ResearchPage() {
         <Card
           key={index}
           style={{
-            marginBottom: '32px',
-            border: 'none',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-            borderRadius: '12px',
+            marginBottom: '48px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+            borderRadius: '16px',
+            transition: 'all 0.3s ease',
+          }}
+          hoverable
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.05)';
+            e.currentTarget.style.transform = 'translateY(0)';
           }}
         >
           <div style={{ marginBottom: '24px' }}>
-            <Tag color="blue" style={{ marginBottom: '16px', fontSize: '0.875rem', padding: '4px 12px' }}>
-              {pub.category}
-            </Tag>
-            <Title level={2} style={{ margin: '0 0 16px 0', color: '#1e293b', fontSize: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+              <BookOutlined style={{ fontSize: '20px', color: '#1e3a8a' }} />
+              <span style={{ 
+                fontSize: '0.813rem', 
+                color: '#64748b',
+                fontWeight: 500,
+              }}>
+                {pub.category}
+              </span>
+            </div>
+            <Title level={2} style={{ margin: '0 0 20px 0', color: '#1e293b', fontSize: '1.75rem', lineHeight: 1.4 }}>
               {pub.title}
             </Title>
-            <Paragraph style={{ fontSize: '1rem', color: '#5a6c7d', marginBottom: '16px' }}>
-              <strong>Authors:</strong> {pub.authors}
-            </Paragraph>
-            <Paragraph style={{ fontSize: '1rem', color: '#5a6c7d', marginBottom: '16px' }}>
-              <strong>Journal:</strong> {pub.journal}
-            </Paragraph>
-            <Paragraph style={{ fontSize: '1rem', color: '#5a6c7d', marginBottom: '16px' }}>
-              <strong>Publisher:</strong> {pub.publisher}
-            </Paragraph>
-            <Paragraph style={{ fontSize: '1rem', color: '#5a6c7d', marginBottom: '16px' }}>
-              <strong>Year:</strong> {pub.year} | <strong>Volume:</strong> {pub.volume}
-            </Paragraph>
+            
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+              gap: '16px',
+              marginBottom: '24px',
+              padding: '20px',
+              background: '#f8fafc',
+              borderRadius: '12px',
+            }}>
+              <div>
+                <div style={{ fontSize: '0.813rem', color: '#64748b', marginBottom: '4px', fontWeight: 500 }}>Authors</div>
+                <div style={{ fontSize: '0.938rem', color: '#1e293b', fontWeight: 500 }}>{pub.authors}</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.813rem', color: '#64748b', marginBottom: '4px', fontWeight: 500 }}>Journal</div>
+                <div style={{ fontSize: '0.938rem', color: '#1e293b', fontWeight: 500 }}>{pub.journal}</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.813rem', color: '#64748b', marginBottom: '4px', fontWeight: 500 }}>Publisher</div>
+                <div style={{ fontSize: '0.938rem', color: '#1e293b', fontWeight: 500 }}>{pub.publisher}</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.813rem', color: '#64748b', marginBottom: '4px', fontWeight: 500 }}>Year & Volume</div>
+                <div style={{ fontSize: '0.938rem', color: '#1e293b', fontWeight: 500 }}>{pub.year} | {pub.volume}</div>
+              </div>
+            </div>
           </div>
 
-          <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#5a6c7d', marginBottom: '24px' }}>
+          <Paragraph style={{ fontSize: '1.063rem', lineHeight: 1.8, color: '#475569', marginBottom: '24px' }}>
             {pub.description}
           </Paragraph>
 
           <div style={{ 
-            padding: '16px', 
-            background: '#f0f9ff', 
-            borderRadius: '8px', 
+            padding: '20px', 
+            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)', 
+            borderRadius: '12px', 
             marginBottom: '24px',
-            borderLeft: '4px solid #1e3a8a'
+            border: '1px solid #e2e8f0'
           }}>
-            <Paragraph style={{ margin: 0, color: '#0369a1', fontWeight: 600 }}>
-              {pub.impact}
-            </Paragraph>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ 
+                width: '4px', 
+                height: '24px', 
+                background: '#1e3a8a', 
+                borderRadius: '2px' 
+              }} />
+              <Paragraph style={{ margin: 0, color: '#1e293b', fontWeight: 600, fontSize: '1rem' }}>
+                {pub.impact}
+              </Paragraph>
+            </div>
           </div>
 
           <a
@@ -105,6 +139,21 @@ export default function ResearchPage() {
               fontSize: '1rem',
               fontWeight: 600,
               textDecoration: 'none',
+              padding: '12px 24px',
+              background: '#f8fafc',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#1e3a8a';
+              e.currentTarget.style.color = '#ffffff';
+              e.currentTarget.style.borderColor = '#1e3a8a';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#f8fafc';
+              e.currentTarget.style.color = '#1e3a8a';
+              e.currentTarget.style.borderColor = '#e2e8f0';
             }}
           >
             <LinkOutlined />
@@ -116,19 +165,19 @@ export default function ResearchPage() {
       <Card
         style={{
           marginTop: '48px',
-          border: 'none',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-          borderRadius: '12px',
-          background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+          borderRadius: '16px',
+          background: '#ffffff',
         }}
       >
-        <Title level={3} style={{ color: '#1e293b', marginBottom: '16px' }}>
+        <Title level={3} style={{ color: '#1e293b', marginBottom: '20px', fontSize: '1.5rem' }}>
           Research Impact
         </Title>
-        <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#5a6c7d' }}>
+        <Paragraph style={{ fontSize: '1.063rem', lineHeight: 1.8, color: '#475569', marginBottom: '16px' }}>
           Mohammad Aminul Haque's research on Islamic bonds has made significant contributions to the fields of finance, banking, and Islamic capital markets. The findings challenge long-standing assumptions that Sukuk merely replicate conventional bonds, demonstrating instead that investor behaviour, risk perception, and wealth effects differ materially between the two instruments.
         </Paragraph>
-        <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#5a6c7d', marginTop: '16px' }}>
+        <Paragraph style={{ fontSize: '1.063rem', lineHeight: 1.8, color: '#475569' }}>
           The research is widely recognised for its rigorous empirical analysis and global relevance, contributing to resolving long-running debates on whether Islamic financial instruments offer genuine diversification and resilience advantages. The paper continues to be cited by scholars and practitioners worldwide, reinforcing its lasting impact on global financial research.
         </Paragraph>
       </Card>

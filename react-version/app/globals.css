@@ -71,6 +71,11 @@ body {
   line-height: 48px !important;
   border-bottom: 2px solid transparent !important;
   transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after {
+  display: none !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover {
@@ -79,17 +84,43 @@ body {
   background: transparent !important;
 }
 
+.ant-menu-horizontal > .ant-menu-item:hover::after {
+  display: none !important;
+}
+
 .ant-menu-horizontal > .ant-menu-item-selected {
   border-bottom-color: #2563eb !important;
   color: #2563eb !important;
   font-weight: 600 !important;
 }
 
+.ant-menu-horizontal > .ant-menu-item-selected::after {
+  display: none !important;
+}
+
 .ant-menu-horizontal > .ant-menu-item a {
   color: inherit !important;
   transition: color 0.3s ease !important;
+  text-decoration: none !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover a {
   color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+/* Remove all default Ant Design menu underlines and borders */
+.ant-menu-horizontal .ant-menu-item::before,
+.ant-menu-horizontal .ant-menu-item::after {
+  display: none !important;
+  content: none !important;
+}
+
+.ant-menu-horizontal .ant-menu-item {
+  border-bottom: 2px solid transparent !important;
+}
+
+.ant-menu-horizontal .ant-menu-item:hover,
+.ant-menu-horizontal .ant-menu-item-selected {
+  border-bottom: 2px solid #2563eb !important;
 }

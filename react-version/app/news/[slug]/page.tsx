@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
-import { Typography, Tag, Button } from 'antd';
+import { Typography, Tag, Button, Card } from 'antd';
 import { ArrowLeftOutlined, LinkOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAllNewsArticles, getNewsArticleByUrl } from '@/lib/news';
 import { generateSEOMetadata, generateStructuredData } from '@/components/SEO';
+import NewsCard from '@/components/NewsCard';
 
 interface PageProps {
   params: {
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: PageProps) {
     image: article.image,
     type: 'article',
     publishedTime: article.date,
+    author: 'Mohammad Aminul Haque',
   });
 }
 
@@ -168,6 +170,32 @@ export default function NewsArticlePage({ params }: PageProps) {
             </a>
           </div>
         )}
+
+        {/* Related Articles Section */}
+        <div style={{ marginTop: '80px', paddingTop: '80px', borderTop: '1px solid #e2e8f0' }}>
+          <Title
+            level={2}
+            style={{
+              textAlign: 'center',
+              marginBottom: '48px',
+              color: '#1e293b',
+            }}
+          >
+            Related News & Updates
+          </Title>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '24px',
+          }}>
+            {getAllNewsArticles()
+              .filter(a => a.id !== article.id && a.category === article.category)
+              .slice(0, 3)
+              .map((relatedArticle) => (
+                <NewsCard key={relatedArticle.id} article={relatedArticle} />
+              ))}
+          </div>
+        </div>
       </div>
     </>
   );

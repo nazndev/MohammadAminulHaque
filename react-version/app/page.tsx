@@ -1,7 +1,7 @@
 'use client';
 
 import { Typography, Button, Row, Col, Card, Divider } from 'antd';
-import { LinkedinOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { LinkedinOutlined, ArrowRightOutlined, BankOutlined, BookOutlined, TrophyOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import NewsCard from '@/components/NewsCard';
 import { getLatestNewsArticles } from '@/lib/news';
@@ -45,7 +45,8 @@ export default function HomePage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '120px 24px 80px',
+          padding: '140px 24px 80px',
+          marginTop: '0',
         }}
       >
         <div style={{ maxWidth: '900px', textAlign: 'center' }}>
@@ -169,7 +170,434 @@ export default function HomePage() {
                   </Paragraph>
                 </div>
               </div>
+              <div style={{ marginTop: '32px', textAlign: 'center' }}>
+                <Link href="/about" style={{ textDecoration: 'none' }}>
+                  <Button
+                    type="link"
+                    style={{
+                      color: '#1e3a8a',
+                      fontWeight: 600,
+                      padding: '0 24px',
+                    }}
+                  >
+                    Learn More About Me →
+                  </Button>
+                </Link>
+              </div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Preview Section */}
+      <section
+        id="experience"
+        style={{
+          padding: '100px 24px',
+          background: '#ffffff',
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <Title
+              level={2}
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontWeight: 700,
+                marginBottom: '16px',
+                color: '#1e293b',
+              }}
+            >
+              Professional Experience
+            </Title>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+              19+ years of cross-regional experience in Banking, Fintech, Strategy, Transformation & Wealth Management
+            </Paragraph>
+          </div>
+
+          <Row gutter={[24, 24]}>
+            <Col xs={24} md={12}>
+              <Card
+                style={{
+                  height: '100%',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  borderRadius: '16px',
+                }}
+              >
+                <div style={{ marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                    <span style={{ 
+                      fontSize: '0.813rem', 
+                      padding: '4px 12px',
+                      borderRadius: '12px',
+                      fontWeight: 600,
+                      background: '#d1fae5',
+                      color: '#065f46',
+                      border: '1px solid #10b981',
+                      display: 'inline-block',
+                    }}>
+                      Current
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                    <BankOutlined style={{ fontSize: '24px', color: '#1e3a8a' }} />
+                    <Title level={4} style={{ margin: 0, color: '#1e293b', fontSize: '1.25rem' }}>
+                      Executive Director, Transformation & Strategy
+                    </Title>
+                  </div>
+                  <Paragraph style={{ margin: '4px 0 0 0', color: '#64748b', fontSize: '0.938rem' }}>
+                    Fintech Consulting Firm • Sydney, Australia
+                  </Paragraph>
+                </div>
+                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                  Leading digital transformation projects, managing deposit and lending products, and driving fintech innovation. Achieved 62M+ registered users and $80M+ daily transactions.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card
+                style={{
+                  height: '100%',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  borderRadius: '16px',
+                }}
+              >
+                <div style={{ marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                    <span style={{ 
+                      fontSize: '0.813rem', 
+                      padding: '4px 12px',
+                      borderRadius: '12px',
+                      fontWeight: 600,
+                      background: '#eff6ff',
+                      color: '#1e40af',
+                      border: '1px solid #3b82f6',
+                      display: 'inline-block',
+                    }}>
+                      Sep 2012 – June 2019
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                    <BankOutlined style={{ fontSize: '24px', color: '#1e3a8a' }} />
+                    <Title level={4} style={{ margin: 0, color: '#1e293b', fontSize: '1.25rem' }}>
+                      Project Manager, South East Asia
+                    </Title>
+                  </div>
+                  <Paragraph style={{ margin: '4px 0 0 0', color: '#64748b', fontSize: '0.938rem' }}>
+                    Renoir Consulting Ltd • Multiple Countries
+                  </Paragraph>
+                </div>
+                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                  Led transformation projects for Fortune 500 companies including Bank Mandiri, Brunei Shell, and BP Indonesia. Achieved USD 9M cost savings and 11.6% productivity improvements.
+                </Paragraph>
+              </Card>
+            </Col>
+          </Row>
+          <div style={{ textAlign: 'center', marginTop: '32px' }}>
+            <Link href="/experience" style={{ textDecoration: 'none' }}>
+              <Button
+                type="link"
+                style={{
+                  color: '#1e3a8a',
+                  fontWeight: 600,
+                  padding: '0 24px',
+                  fontSize: '1rem',
+                }}
+              >
+                View Full Experience →
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Preview Section */}
+      <section
+        id="research"
+        style={{
+          padding: '100px 24px',
+          background: '#fafafa',
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <Title
+              level={2}
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontWeight: 700,
+                marginBottom: '16px',
+                color: '#1e293b',
+              }}
+            >
+              Research & Publications
+            </Title>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+              Internationally published research in Islamic Finance and Capital Markets
+            </Paragraph>
+          </div>
+
+          <Card
+            style={{
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+              borderRadius: '16px',
+              maxWidth: '900px',
+              margin: '0 auto',
+            }}
+          >
+            <div style={{ marginBottom: '20px' }}>
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <span style={{ 
+                  fontSize: '0.813rem', 
+                  padding: '4px 12px',
+                  borderRadius: '12px',
+                  fontWeight: 600,
+                  background: '#dbeafe',
+                  color: '#1e40af',
+                  border: '1px solid #3b82f6',
+                  display: 'inline-block',
+                }}>
+                  Research
+                </span>
+                <span style={{ 
+                  fontSize: '0.813rem', 
+                  padding: '4px 12px',
+                  borderRadius: '12px',
+                  fontWeight: 600,
+                  background: '#eff6ff',
+                  color: '#1e40af',
+                  border: '1px solid #3b82f6',
+                  display: 'inline-block',
+                }}>
+                  2013
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                <BookOutlined style={{ fontSize: '24px', color: '#1e3a8a', marginTop: '4px', flexShrink: 0 }} />
+                <div style={{ flex: 1 }}>
+                  <Title level={4} style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1.25rem', lineHeight: 1.4 }}>
+                    Are Islamic Bonds Different from Conventional Bonds? International Evidence from Capital Market Tests
+                  </Title>
+                  <Paragraph style={{ color: '#64748b', fontSize: '0.938rem', marginBottom: '12px' }}>
+                    <strong>Authors:</strong> Nafis Alam, M. Kabir Hassan, Mohammad Aminul Haque<br />
+                    <strong>Journal:</strong> Borsa Istanbul Review (Elsevier, ScienceDirect)<br />
+                    <strong>Volume:</strong> 13, Issue 3
+                  </Paragraph>
+                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                  This high-impact research paper examines the fundamental differences between Islamic bonds (Sukuk) and conventional bonds in global capital markets. The study analyzes 166 bond issuances across multiple international markets.
+                </Paragraph>
+                <div style={{ 
+                  padding: '12px 16px', 
+                  background: '#f8fafc', 
+                  borderRadius: '8px',
+                  border: '1px solid #e2e8f0',
+                }}>
+                  <Paragraph style={{ margin: 0, color: '#1e293b', fontWeight: 600, fontSize: '0.938rem' }}>
+                    One of the highest cited publications in Islamic Bond research
+                  </Paragraph>
+                </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          <div style={{ textAlign: 'center', marginTop: '32px' }}>
+            <Link href="/research" style={{ textDecoration: 'none' }}>
+              <Button
+                type="link"
+                style={{
+                  color: '#1e3a8a',
+                  fontWeight: 600,
+                  padding: '0 24px',
+                  fontSize: '1rem',
+                }}
+              >
+                View Full Research →
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Preview Section */}
+      <section
+        id="achievements"
+        style={{
+          padding: '100px 24px',
+          background: '#ffffff',
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <Title
+              level={2}
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                fontWeight: 700,
+                marginBottom: '16px',
+                color: '#1e293b',
+              }}
+            >
+              Achievements & Awards
+            </Title>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+              Recognitions, awards, and achievements in banking, fintech, and finance
+            </Paragraph>
+          </div>
+
+          <Row gutter={[24, 24]}>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                style={{
+                  height: '100%',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  borderRadius: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#fef3c7',
+                    color: '#92400e',
+                    border: '1px solid #fbbf24',
+                    display: 'inline-block',
+                  }}>
+                    Award
+                  </span>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#eff6ff',
+                    color: '#1e40af',
+                    border: '1px solid #3b82f6',
+                    display: 'inline-block',
+                  }}>
+                    2022
+                  </span>
+                </div>
+                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                  Best DFS Innovative Award
+                </Title>
+                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                  Dubai Financial Services
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                style={{
+                  height: '100%',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  borderRadius: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#fef3c7',
+                    color: '#92400e',
+                    border: '1px solid #fbbf24',
+                    display: 'inline-block',
+                  }}>
+                    Award
+                  </span>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#eff6ff',
+                    color: '#1e40af',
+                    border: '1px solid #3b82f6',
+                    display: 'inline-block',
+                  }}>
+                    2021
+                  </span>
+                </div>
+                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                  Mastercard Excellence Award
+                </Title>
+                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                  Mastercard
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                style={{
+                  height: '100%',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  borderRadius: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#d1fae5',
+                    color: '#065f46',
+                    border: '1px solid #10b981',
+                    display: 'inline-block',
+                  }}>
+                    Achievement
+                  </span>
+                  <span style={{ 
+                    fontSize: '0.813rem', 
+                    padding: '4px 12px',
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    background: '#eff6ff',
+                    color: '#1e40af',
+                    border: '1px solid #3b82f6',
+                    display: 'inline-block',
+                  }}>
+                    2020
+                  </span>
+                </div>
+                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                  62M+ Users & $80M+ Daily Transactions
+                </Title>
+                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                  Fintech Transformation
+                </Paragraph>
+              </Card>
+            </Col>
+          </Row>
+          <div style={{ textAlign: 'center', marginTop: '32px' }}>
+            <Link href="/achievements" style={{ textDecoration: 'none' }}>
+              <Button
+                type="link"
+                style={{
+                  color: '#1e3a8a',
+                  fontWeight: 600,
+                  padding: '0 24px',
+                  fontSize: '1rem',
+                }}
+              >
+                View All Achievements →
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

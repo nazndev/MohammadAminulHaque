@@ -17,19 +17,19 @@ const menuItems = [
   },
   { 
     key: 'about', 
-    label: <Link href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link> 
+    label: <Link href="/#about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link> 
   },
   { 
     key: 'experience', 
-    label: <Link href="/experience" style={{ textDecoration: 'none', color: 'inherit' }}>Experience</Link> 
+    label: <Link href="/#experience" style={{ textDecoration: 'none', color: 'inherit' }}>Experience</Link> 
   },
   { 
     key: 'research', 
-    label: <Link href="/research" style={{ textDecoration: 'none', color: 'inherit' }}>Research</Link> 
+    label: <Link href="/#research" style={{ textDecoration: 'none', color: 'inherit' }}>Research</Link> 
   },
   { 
     key: 'achievements', 
-    label: <Link href="/achievements" style={{ textDecoration: 'none', color: 'inherit' }}>Achievements</Link> 
+    label: <Link href="/#achievements" style={{ textDecoration: 'none', color: 'inherit' }}>Achievements</Link> 
   },
   { 
     key: 'news', 
@@ -50,7 +50,7 @@ export default function Header() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -108,6 +108,7 @@ export default function Header() {
         boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)' : 'none',
         transition: 'all 0.3s ease',
         height: '80px',
+        overflow: 'visible',
       }}
     >
       <div style={{ 
@@ -116,21 +117,23 @@ export default function Header() {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'space-between',
-        padding: '0 48px',
+        padding: '0 24px',
+        gap: '16px',
       }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <div style={{ 
-            fontSize: '1.5rem', 
+            fontSize: 'clamp(1rem, 2vw, 1.5rem)', 
             fontWeight: 700,
             color: '#2c3e50',
             letterSpacing: '-0.02em',
             fontFamily: 'Inter, -apple-system, sans-serif',
+            whiteSpace: 'nowrap',
           }}>
             Mohammad Aminul Haque
           </div>
         </Link>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px', flex: 1, justifyContent: 'flex-end' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
           {!isMobile && (
             <>
               <Menu
@@ -140,9 +143,10 @@ export default function Header() {
                   background: 'transparent',
                   border: 'none',
                   color: '#2c3e50',
-                  minWidth: '400px',
+                  flex: 1,
+                  minWidth: 0,
                   fontWeight: 500,
-                  fontSize: '0.95rem',
+                  fontSize: '0.9rem',
                   justifyContent: 'flex-end',
                 }}
                 theme="light"
@@ -153,8 +157,9 @@ export default function Header() {
                 enterButton={<SearchOutlined />}
                 size="middle"
                 style={{
-                  maxWidth: '280px',
-                  width: '100%',
+                  maxWidth: '240px',
+                  minWidth: '200px',
+                  flexShrink: 0,
                 }}
                 onSearch={(value) => {
                   if (value.trim()) {

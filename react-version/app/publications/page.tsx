@@ -1,17 +1,11 @@
+'use client';
+
 import { Typography, Card, List, Tag, Button } from 'antd';
 import { BookOutlined, LinkOutlined, DownloadOutlined } from '@ant-design/icons';
-import { generateSEOMetadata } from '@/components/SEO';
 import Link from 'next/link';
 
-const { Title, Paragraph } = Typography;
-
-export const metadata = generateSEOMetadata({
-  title: 'Publications - Mohammad Aminul Haque',
-  description: 'Research publications by Mohammad Aminul Haque on Islamic Finance, Sukuk bonds, and capital markets. Published in Borsa Istanbul Review, ScienceDirect, Elsevier.',
-  url: '/publications',
-});
-
 export default function PublicationsPage() {
+  const { Title, Paragraph } = Typography;
   const publications = [
     {
       title: 'Are Islamic Bonds Different from Conventional Bonds? International Evidence from Capital Market Tests',

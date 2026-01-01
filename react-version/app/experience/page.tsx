@@ -1,16 +1,10 @@
+'use client';
+
 import { Typography, Card, Timeline, Tag } from 'antd';
 import { BankOutlined, GlobalOutlined, RocketOutlined } from '@ant-design/icons';
-import { generateSEOMetadata } from '@/components/SEO';
-
-const { Title, Paragraph } = Typography;
-
-export const metadata = generateSEOMetadata({
-  title: 'Professional Experience - Mohammad Aminul Haque',
-  description: 'Professional experience of Mohammad Aminul Haque: 19+ years in banking, fintech, strategy, transformation, and wealth management. Experience at Standard Chartered Bank, BRAC Bank, Renoir Consulting, and leading fintech transformation.',
-  url: '/experience',
-});
 
 export default function ExperiencePage() {
+  const { Title, Paragraph } = Typography;
   const experiences = [
     {
       period: 'Current',
@@ -106,37 +100,94 @@ export default function ExperiencePage() {
       </div>
 
       <Timeline
-        mode="left"
+        mode="start"
+        style={{ paddingLeft: 0 }}
         items={experiences.map((exp, index) => ({
-          dot: <div style={{ fontSize: '24px', color: '#1e3a8a' }}>{exp.icon}</div>,
-          children: (
+          icon: (
+            <div style={{ 
+              fontSize: '18px', 
+              color: '#ffffff',
+              background: '#1e3a8a',
+              width: '36px',
+              height: '48px',
+              borderRadius: '18px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 2px 8px rgba(30, 58, 138, 0.2)',
+              flexShrink: 0,
+            }}>
+              {exp.icon}
+            </div>
+          ),
+          content: (
             <Card
               style={{
                 marginBottom: '32px',
-                border: 'none',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                borderRadius: '12px',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                borderRadius: '16px',
+                transition: 'all 0.3s ease',
+              }}
+              hoverable
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.transform = 'translateX(4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.transform = 'translateX(0)';
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px', flexWrap: 'wrap', gap: '16px' }}>
-                <div style={{ flex: 1 }}>
-                  <Title level={3} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: '16px' }}>
+                <div style={{ flex: 1, minWidth: '200px' }}>
+                  <Title level={3} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.375rem', lineHeight: 1.3 }}>
                     {exp.title}
                   </Title>
-                  <Paragraph style={{ margin: '0 0 8px 0', color: '#1e3a8a', fontWeight: 600, fontSize: '1rem' }}>
+                  <Paragraph style={{ margin: '0 0 8px 0', color: '#1e3a8a', fontWeight: 600, fontSize: '1.063rem' }}>
                     {exp.company}
                   </Paragraph>
-                  <Paragraph style={{ margin: '0 0 12px 0', color: '#64748b', fontSize: '0.938rem' }}>
+                  <Paragraph style={{ margin: 0, color: '#64748b', fontSize: '0.938rem' }}>
                     {exp.location}
                   </Paragraph>
                 </div>
-                <Tag color="blue" style={{ fontSize: '0.938rem', padding: '4px 12px' }}>
+                <div style={{ 
+                  fontSize: '0.875rem', 
+                  color: '#64748b',
+                  fontWeight: 500,
+                  letterSpacing: '0.01em',
+                  whiteSpace: 'nowrap',
+                  paddingTop: '4px',
+                }}>
                   {exp.period}
-                </Tag>
+                </div>
               </div>
-              <ul style={{ margin: 0, paddingLeft: '20px', color: '#5a6c7d' }}>
+              <ul style={{ 
+                margin: 0, 
+                paddingLeft: '24px', 
+                color: '#475569',
+                listStyle: 'none',
+              }}>
                 {exp.achievements.map((achievement, idx) => (
-                  <li key={idx} style={{ marginBottom: '8px', lineHeight: 1.7 }}>
+                  <li 
+                    key={idx} 
+                    style={{ 
+                      marginBottom: '12px', 
+                      lineHeight: 1.7,
+                      fontSize: '0.938rem',
+                      position: 'relative',
+                      paddingLeft: '20px',
+                    }}
+                  >
+                    <span style={{
+                      position: 'absolute',
+                      left: 0,
+                      top: '8px',
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: '#1e3a8a',
+                    }} />
                     {achievement}
                   </li>
                 ))}

@@ -1,16 +1,10 @@
+'use client';
+
 import { Typography, Card, Row, Col, Divider, Timeline } from 'antd';
-import { generateSEOMetadata } from '@/components/SEO';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 
-const { Title, Paragraph } = Typography;
-
-export const metadata = generateSEOMetadata({
-  title: 'About Mohammad Aminul Haque - Senior Banker & Fintech Expert',
-  description: 'Learn about Mohammad Aminul Haque, a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with 19+ years of cross-regional experience in Banking, Fintech, Strategy, Transformation & Wealth Management.',
-  url: '/about',
-});
-
 export default function AboutPage() {
+  const { Title, Paragraph } = Typography;
   const breadcrumbSchema = generateBreadcrumbSchema('/about');
 
   return (
@@ -59,7 +53,6 @@ export default function AboutPage() {
       <Row gutter={[24, 24]} style={{ marginBottom: '48px' }}>
         <Col xs={24} md={12}>
           <Card
-            title={<Title level={3} style={{ margin: 0, color: '#1e293b' }}>Education</Title>}
             style={{
               height: '100%',
               border: 'none',
@@ -67,6 +60,7 @@ export default function AboutPage() {
               borderRadius: '12px',
             }}
           >
+            <Title level={3} style={{ margin: '0 0 24px 0', color: '#1e293b' }}>Education</Title>
             <Timeline
               items={[
                 {
@@ -97,7 +91,6 @@ export default function AboutPage() {
         </Col>
         <Col xs={24} md={12}>
           <Card
-            title={<Title level={3} style={{ margin: 0, color: '#1e293b' }}>Research & Publications</Title>}
             style={{
               height: '100%',
               border: 'none',
@@ -105,6 +98,7 @@ export default function AboutPage() {
               borderRadius: '12px',
             }}
           >
+            <Title level={3} style={{ margin: '0 0 24px 0', color: '#1e293b' }}>Research & Publications</Title>
             <Paragraph style={{ fontSize: '1rem', lineHeight: 1.8, color: '#5a6c7d' }}>
               Co-authored a highly cited research paper on <strong>Islamic Bonds (Sukuk) vs Conventional Bonds</strong> published in <strong>Borsa Istanbul Review</strong> (ScienceDirect, Elsevier), one of the highest cited publications in Islamic Bond research.
             </Paragraph>
@@ -116,13 +110,13 @@ export default function AboutPage() {
       </Row>
 
       <Card
-        title={<Title level={2} style={{ margin: 0, color: '#1e293b' }}>Professional Expertise</Title>}
         style={{
           border: 'none',
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
           borderRadius: '12px',
         }}
       >
+        <Title level={2} style={{ margin: '0 0 32px 0', color: '#1e293b' }}>Professional Expertise</Title>
         <Row gutter={[16, 16]}>
           <Col xs={24} sm={12} md={8}>
             <div style={{ padding: '16px', background: '#f8fafc', borderRadius: '8px' }}>

@@ -1,0 +1,305 @@
+{
+  "timestamp": "2025-12-30T16:23:32.613Z",
+  "yourRanking": null,
+  "priority": "maintain",
+  "immediateActions": [
+    {
+      "action": "Optimize news articles for Google News",
+      "reason": "Your news articles are not appearing in Google News section",
+      "steps": [
+        "Submit to Google News Publisher Center",
+        "Ensure all news articles have proper NewsArticle schema",
+        "Create Google News sitemap",
+        "Add news-specific meta tags (article:published_time, etc.)",
+        "Ensure articles are published within last 2 days for news sitemap"
+      ]
+    }
+  ],
+  "contentSuggestions": [
+    {
+      "title": "Add content about: profiles, linkedin, driving",
+      "reason": "Competitor \"10+ \"Mohammad Aminul Haque\" profiles | LinkedIn\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - profiles",
+        "keywords": [
+          "profiles",
+          "linkedin",
+          "driving",
+          "financial",
+          "growth",
+          "project",
+          "manager",
+          "digital",
+          "transformation",
+          "specialist"
+        ],
+        "relatedTo": "10+ \"Mohammad Aminul Haque\" profiles | LinkedIn"
+      }
+    },
+    {
+      "title": "Add content about: cmos, compatible, carbonization",
+      "reason": "Competitor \"\"CMOS Compatible Carbonization of Polymer for Elctrochemical ...\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - cmos",
+        "keywords": [
+          "cmos",
+          "compatible",
+          "carbonization",
+          "polymer",
+          "elctrochemical",
+          "cmos",
+          "compatible",
+          "carbonization",
+          "polymer",
+          "elctrochemical"
+        ],
+        "relatedTo": "\"CMOS Compatible Carbonization of Polymer for Elctrochemical ..."
+      }
+    },
+    {
+      "title": "Add content about: architect, designer, assoc",
+      "reason": "Competitor \"Mohammad Aminul Haque - Architect Designer, Assoc. AIA | LinkedIn\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - architect",
+        "keywords": [
+          "architect",
+          "designer",
+          "assoc",
+          "linkedin",
+          "architectural",
+          "designer",
+          "broad",
+          "diversity",
+          "experience",
+          "designing"
+        ],
+        "relatedTo": "Mohammad Aminul Haque - Architect Designer, Assoc. AIA | LinkedIn"
+      }
+    },
+    {
+      "title": "Add content about: footballer, wikipedia, regarded",
+      "reason": "Competitor \"Aminul Haque (footballer) - Wikipedia\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - footballer",
+        "keywords": [
+          "footballer",
+          "wikipedia",
+          "regarded",
+          "greatest",
+          "bangladeshi",
+          "footballers",
+          "marked",
+          "greatest",
+          "goalkeeper",
+          "represented"
+        ],
+        "relatedTo": "Aminul Haque (footballer) - Wikipedia"
+      }
+    },
+    {
+      "title": "Add content about: micro, electronics, group",
+      "reason": "Competitor \"Aminul Haque - Micro-Bio-Electronics Group\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - micro",
+        "keywords": [
+          "micro",
+          "electronics",
+          "group",
+          "student",
+          "working",
+          "supervision",
+          "nicole",
+          "mcfarlane",
+          "research",
+          "interests"
+        ],
+        "relatedTo": "Aminul Haque - Micro-Bio-Electronics Group"
+      }
+    },
+    {
+      "title": "Add content about: muhammad, akhand, servicing",
+      "reason": "Competitor \"Dr. Muhammad Aminul Haque Akhand\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - muhammad",
+        "keywords": [
+          "muhammad",
+          "akhand",
+          "servicing",
+          "professor",
+          "dept",
+          "kuet",
+          "graduated",
+          "university",
+          "1999",
+          "then"
+        ],
+        "relatedTo": "Dr. Muhammad Aminul Haque Akhand"
+      }
+    },
+    {
+      "title": "Add content about: muhammad, engineering, firm",
+      "reason": "Competitor \"Muhammad Aminul Haque (PVT.) LTD — Engineering Firm from ...\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - muhammad",
+        "keywords": [
+          "muhammad",
+          "engineering",
+          "firm",
+          "muhammad",
+          "engineering",
+          "firm",
+          "bangladesh",
+          "experience",
+          "asian",
+          "development"
+        ],
+        "relatedTo": "Muhammad Aminul Haque (PVT.) LTD — Engineering Firm from ..."
+      }
+    },
+    {
+      "title": "Add content about: islamic, bonds, different",
+      "reason": "Competitor \"Are Islamic bonds different from conventional bonds? International ...\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - islamic",
+        "keywords": [
+          "islamic",
+          "bonds",
+          "different",
+          "conventional",
+          "bonds",
+          "international",
+          "show",
+          "mendeley",
+          "share",
+          "cite"
+        ],
+        "relatedTo": "Are Islamic bonds different from conventional bonds? International ..."
+      }
+    },
+    {
+      "title": "Add content about: google, scholar, professor",
+      "reason": "Competitor \"‪Md. Aminul Haque‬ - ‪Google Scholar‬\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - google",
+        "keywords": [
+          "google",
+          "scholar",
+          "professor",
+          "chemistry",
+          "jagannath",
+          "university",
+          "cited",
+          "organic",
+          "synthesis",
+          "medicinal"
+        ],
+        "relatedTo": "‪Md. Aminul Haque‬ - ‪Google Scholar‬"
+      }
+    },
+    {
+      "title": "Add content about: appointed, group, chief",
+      "reason": "Competitor \"Mohammad Aminul Haque appointed as Group Chief Financial ...\" ranks because of this content",
+      "priority": "high",
+      "suggestedContent": {
+        "title": "Mohammad Aminul Haque - appointed",
+        "keywords": [
+          "appointed",
+          "group",
+          "chief",
+          "financial",
+          "completed",
+          "accounting",
+          "information",
+          "systems",
+          "university",
+          "dhaka"
+        ],
+        "relatedTo": "Mohammad Aminul Haque appointed as Group Chief Financial ..."
+      }
+    }
+  ],
+  "optimizationSuggestions": [
+    {
+      "action": "Update LinkedIn profile with website link prominently",
+      "reason": "To outrank \"10+ \"Mohammad Aminul Haque\" profiles | LinkedIn\" at position 1",
+      "priority": "high",
+      "steps": [
+        "Add website link to LinkedIn profile header and about section"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"\"CMOS Compatible Carbonization of Polymer for Elctrochemical ...\" at position 2",
+      "priority": "medium",
+      "steps": [
+        "Add content about: cmos, compatible, carbonization, polymer, elctrochemical, cmos, compatible, carbonization, polymer, elctrochemical"
+      ]
+    },
+    {
+      "action": "Update LinkedIn profile with website link prominently",
+      "reason": "To outrank \"Mohammad Aminul Haque - Architect Designer, Assoc. AIA | LinkedIn\" at position 3",
+      "priority": "high",
+      "steps": [
+        "Add website link to LinkedIn profile header and about section"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"Aminul Haque (footballer) - Wikipedia\" at position 4",
+      "priority": "medium",
+      "steps": [
+        "Add content about: footballer, wikipedia, regarded, greatest, bangladeshi, footballers, marked, greatest, goalkeeper, represented"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"Aminul Haque - Micro-Bio-Electronics Group\" at position 5",
+      "priority": "medium",
+      "steps": [
+        "Add content about: micro, electronics, group, student, working, supervision, nicole, mcfarlane, research, interests"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"Dr. Muhammad Aminul Haque Akhand\" at position 6",
+      "priority": "medium",
+      "steps": [
+        "Add content about: muhammad, akhand, servicing, professor, dept, kuet, graduated, university, 1999, then"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"Muhammad Aminul Haque (PVT.) LTD — Engineering Firm from ...\" at position 7",
+      "priority": "medium",
+      "steps": [
+        "Add content about: muhammad, engineering, firm, muhammad, engineering, firm, bangladesh, experience, asian, development"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"Are Islamic bonds different from conventional bonds? International ...\" at position 8",
+      "priority": "medium",
+      "steps": [
+        "Add content about: islamic, bonds, different, conventional, bonds, international, show, mendeley, share, cite"
+      ]
+    },
+    {
+      "action": "Optimize existing content or create new page",
+      "reason": "To outrank \"‪Md. Aminul Haque‬ - ‪Google Scholar‬\" at position 9",
+      "priority": "medium",
+      "steps": [
+        "Add content about: google, scholar, professor, chemistry, jagannath, university, cited, organic, synthesis, medicinal"
+      ]
+    }
+  ],
+  "backlinkSuggestions": []
+}

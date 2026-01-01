@@ -21,9 +21,18 @@ export function generateSEOMetadata({
   author = 'Mohammad Aminul Haque'
 }: SEOProps): Metadata {
   const fullUrl = `${config.baseUrl}${url}`;
-  const ogImage = image || `${config.baseUrl}/og-image.jpg`;
+  const ogImage = image; // Only use provided image, no fallback
 
-  return {
+  // News-specific meta tags for Google News
+  const newsMetaTags: Record<string, string> = {};
+  if (type === 'article' && publishedTime) {
+    newsMetaTags['article:published_time'] = publishedTime;
+    newsMetaTags['article:author'] = author;
+    newsMetaTags['article:section'] = 'News';
+    newsMetaTags['news_keywords'] = 'Mohammad Aminul Haque, Finance, Banking, Fintech';
+  }
+
+  const metadata: Metadata = {
     title: `${title} | Mohammad Aminul Haque`,
     description,
     keywords: [
@@ -44,19 +53,30 @@ export function generateSEOMetadata({
       url: fullUrl,
       title,
       description,
-      images: [{ url: ogImage }],
+      ...(ogImage && { images: [{ url: ogImage }] }),
       ...(publishedTime && { publishedTime }),
+      ...(type === 'article' && {
+        authors: [author],
+        section: 'News',
+      }),
     },
     twitter: {
-      card: 'summary_large_image',
+      card: ogImage ? 'summary_large_image' : 'summary',
       title,
       description,
-      images: [ogImage],
+      ...(ogImage && { images: [ogImage] }),
     },
     alternates: {
       canonical: fullUrl,
     },
   };
+
+  // Only add news meta tags if they exist (not empty object)
+  if (Object.keys(newsMetaTags).length > 0) {
+    metadata.other = newsMetaTags;
+  }
+
+  return metadata;
 }
 
 export function generateStructuredData(type: 'Person' | 'WebSite' | 'NewsArticle', data: any) {
@@ -91,28 +111,53 @@ export function generateStructuredData(type: 'Person' | 'WebSite' | 'NewsArticle
       };
     
     case 'NewsArticle':
-      return {
+      // Enhanced NewsArticle schema for Google News
+      const newsSchema = {
         ...baseSchema,
         headline: data.title,
         datePublished: data.date,
-        dateModified: data.date,
+        dateModified: data.dateModified || data.date,
         description: data.excerpt,
-        image: data.image,
+        articleBody: data.content || data.excerpt,
+        ...(data.image && {
+          image: Array.isArray(data.image) ? data.image : [{
+            '@type': 'ImageObject',
+            url: data.image,
+            width: 1200,
+            height: 630,
+          }],
+        }),
         url: `${config.baseUrl}${data.url}`,
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${config.baseUrl}${data.url}`,
+        },
         author: {
           '@type': 'Person',
           name: 'Mohammad Aminul Haque',
+          url: config.baseUrl,
           sameAs: 'https://www.linkedin.com/in/mohammad-aminul-haque-32989215',
         },
         publisher: {
           '@type': 'Organization',
           name: 'Mohammad Aminul Haque',
+          url: config.baseUrl,
           logo: {
             '@type': 'ImageObject',
             url: `${config.baseUrl}/logo.png`,
+            width: 600,
+            height: 60,
           },
         },
+        // Google News specific fields
+        articleSection: data.category || 'News',
+        keywords: data.keywords || ['Mohammad Aminul Haque', 'Finance', 'Banking', 'Fintech'],
+        // If there's a source URL, add it as citation
+        ...(data.sourceUrl && {
+          citation: data.sourceUrl,
+        }),
       };
+      return newsSchema;
     
     default:
       return baseSchema;

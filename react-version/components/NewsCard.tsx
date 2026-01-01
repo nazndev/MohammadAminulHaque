@@ -1,9 +1,8 @@
 'use client';
 
-import { Tag, Typography } from 'antd';
+import { Typography, Card } from 'antd';
 import { NewsArticle } from '@/types';
 import Link from 'next/link';
-import Image from 'next/image';
 import { CalendarOutlined, LinkOutlined } from '@ant-design/icons';
 import React from 'react';
 
@@ -18,15 +17,16 @@ export default function NewsCard({ article }: NewsCardProps) {
     month: 'short',
   });
 
-  const categoryColors: Record<string, { bg: string; text: string }> = {
-    Research: { bg: '#e0f2fe', text: '#0369a1' },
-    Achievement: { bg: '#dcfce7', text: '#166534' },
-    Award: { bg: '#fef3c7', text: '#92400e' },
-    Media: { bg: '#f3e8ff', text: '#6b21a8' },
-    Event: { bg: '#cffafe', text: '#0e7490' },
-    Partnership: { bg: '#fed7aa', text: '#9a3412' },
-    Recognition: { bg: '#fce7f3', text: '#9f1239' },
+  const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
+    Research: { bg: '#dbeafe', text: '#1e40af', border: '#3b82f6' },
+    Achievement: { bg: '#d1fae5', text: '#065f46', border: '#10b981' },
+    Award: { bg: '#fef3c7', text: '#92400e', border: '#fbbf24' },
+    Media: { bg: '#f3e8ff', text: '#6b21a8', border: '#a855f7' },
+    Event: { bg: '#cffafe', text: '#0e7490', border: '#06b6d4' },
+    Partnership: { bg: '#fed7aa', text: '#9a3412', border: '#fb923c' },
+    Recognition: { bg: '#fce7f3', text: '#9f1239', border: '#f472b6' },
   };
+
 
   // Extract domain name from sourceUrl for display (if available)
   const getDomainName = (url?: string): string => {
@@ -52,195 +52,128 @@ export default function NewsCard({ article }: NewsCardProps) {
   };
 
   const sourceDomain = getDomainName(article.sourceUrl);
-  const categoryColor = categoryColors[article.category] || { bg: '#f1f5f9', text: '#475569' };
+  
+  // Link to original source URL if available, otherwise use internal URL
+  const linkUrl = article.sourceUrl || article.url;
+  const isExternal = linkUrl.startsWith('http');
 
   const cardContent = (
-    <div
-      style={{
-        height: '100%',
-        background: '#ffffff',
-        border: '1px solid #e2e8f0',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-        cursor: 'pointer',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-      onMouseEnter={(e) => {
-        const card = e.currentTarget;
-        card.style.transform = 'translateY(-6px)';
-        card.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
-        card.style.borderColor = '#1e3a8a';
-        const img = card.querySelector('img');
-        if (img) {
-          img.style.transform = 'scale(1.08)';
-        }
-      }}
-      onMouseLeave={(e) => {
-        const card = e.currentTarget;
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)';
-        card.style.borderColor = '#e2e8f0';
-        const img = card.querySelector('img');
-        if (img) {
-          img.style.transform = 'scale(1)';
-        }
-      }}
-    >
-      {/* Image Section */}
-      <div style={{ 
-        position: 'relative', 
-        width: '100%', 
-        height: '200px', 
-        overflow: 'hidden', 
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      }}>
-        <Image
-          src={article.image}
-          alt={article.title}
-          fill
-          style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        {/* Category Badge */}
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-        }}>
-          <Tag 
-            style={{ 
-              margin: 0, 
-              fontWeight: 600, 
-              borderRadius: '8px',
-              padding: '6px 14px',
-              fontSize: '0.75rem',
-              border: 'none',
-              background: categoryColor.bg,
-              color: categoryColor.text,
-              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            {article.category}
-          </Tag>
-        </div>
-      </div>
-
-      {/* Content Section */}
-      <div style={{ 
-        padding: '24px', 
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
-        {/* Date */}
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '8px',
-          marginBottom: '16px',
-          color: '#64748b',
-          fontSize: '0.813rem',
-        }}>
-          <CalendarOutlined style={{ fontSize: '0.875rem' }} />
-          <span style={{ fontWeight: 500 }}>{date}</span>
+    <Card
+        style={{
+          height: '100%',
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+          borderRadius: '16px',
+          transition: 'all 0.3s ease',
+        }}
+        hoverable
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+          e.currentTarget.style.transform = 'translateX(4px)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.05)';
+          e.currentTarget.style.transform = 'translateX(0)';
+        }}
+      >
+        <div style={{ marginBottom: '16px' }}>
+          <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ 
+              fontSize: '0.813rem', 
+              padding: '4px 12px',
+              borderRadius: '12px',
+              fontWeight: 600,
+              background: categoryColors[article.category]?.bg || '#f1f5f9',
+              color: categoryColors[article.category]?.text || '#475569',
+              border: `1px solid ${categoryColors[article.category]?.border || '#e2e8f0'}`,
+              display: 'inline-block',
+            }}>
+              {article.category}
+            </span>
+            <span style={{ 
+              fontSize: '0.813rem', 
+              padding: '4px 12px',
+              borderRadius: '12px',
+              fontWeight: 600,
+              background: '#eff6ff',
+              color: '#1e40af',
+              border: '1px solid #3b82f6',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}>
+              <CalendarOutlined style={{ fontSize: '0.75rem' }} />
+              {date}
+            </span>
+          </div>
+          <Title level={3} style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1.375rem', lineHeight: 1.3 }}>
+            {article.title}
+          </Title>
         </div>
         
-        {/* Title */}
-        <Title 
-          level={4} 
-          style={{ 
-            color: '#1e293b', 
-            marginBottom: '12px', 
-            marginTop: 0,
-            fontSize: '1.125rem', 
-            fontWeight: 700, 
-            lineHeight: 1.4,
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-            minHeight: '60px',
-          }}
-        >
-          {article.title}
-        </Title>
-        
-        {/* Excerpt */}
-        <Paragraph
-          ellipsis={{ rows: 3 }}
-          style={{ 
-            color: '#475569', 
-            margin: 0, 
-            marginBottom: '20px',
-            lineHeight: '1.7', 
-            fontSize: '0.938rem',
-            flex: 1,
-          }}
-        >
+        <Paragraph style={{ fontSize: '1rem', lineHeight: 1.7, color: '#5a6c7d', marginBottom: '16px' }}>
           {article.excerpt}
         </Paragraph>
         
-        {/* Link Section - Always Visible */}
         <div style={{
-          marginTop: 'auto',
-          paddingTop: '16px',
-          borderTop: '1px solid #e2e8f0',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '12px',
+          paddingTop: '16px',
+          borderTop: '1px solid #e2e8f0',
+          marginTop: 'auto',
         }}>
           <div style={{
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            flex: 1,
-            minWidth: 0,
           }}>
             <LinkOutlined style={{ 
               color: '#1e3a8a', 
               fontSize: '0.875rem',
-              flexShrink: 0,
             }} />
             <Text
-              ellipsis
               style={{
                 color: '#1e3a8a',
-                fontSize: '0.813rem',
-                fontWeight: 500,
-                display: 'block',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                fontSize: '0.875rem',
+                fontWeight: 600,
               }}
-              title={article.sourceUrl || 'Read Article'}
             >
-              {article.sourceUrl ? `Source: ${sourceDomain}` : 'Read Article'}
+              Read Article →
             </Text>
           </div>
           {article.sourceUrl && (
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              color: '#64748b',
-              fontSize: '0.75rem',
-              flexShrink: 0,
-            }}>
-              <span>External</span>
-            </div>
+            <Text
+              style={{
+                color: '#64748b',
+                fontSize: '0.813rem',
+                fontWeight: 500,
+              }}
+            >
+              {sourceDomain}
+            </Text>
           )}
         </div>
-      </div>
-    </div>
+      </Card>
   );
 
-  // All articles now have internal URLs - link to your site's pages
+  // Use regular <a> tag for external links, Next.js Link for internal
+  if (isExternal) {
+    return (
+      <a 
+        href={linkUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
   return (
-    <Link href={article.url} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+    <Link href={linkUrl} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
       {cardContent}
     </Link>
   );

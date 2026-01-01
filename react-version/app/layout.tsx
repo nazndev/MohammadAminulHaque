@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     url: config.baseUrl,
     title: "Mohammad Aminul Haque - Senior Banker, Fintech & Finance Expert",
     description: "Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with 19+ years of cross-regional experience.",
-    images: [{ url: `${config.baseUrl}/og-image.jpg` }],
   },
   twitter: {
     card: "summary_large_image",
@@ -41,6 +40,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: config.baseUrl,
+  },
+  // Google News and publishing metadata
+  other: {
+    'google-news-sitemap': `${config.baseUrl}/news-sitemap/`,
+    'news_keywords': 'Mohammad Aminul Haque, Banking, Fintech, Islamic Finance, Strategy, Transformation, Finance',
   },
 };
 
