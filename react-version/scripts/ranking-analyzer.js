@@ -39,7 +39,7 @@ try {
 
 const CONFIG = {
   targetKeyword: 'Mohammad Aminul Haque',
-  targetDomain: 'mohammadaminulhaque.net',
+  targetDomain: 'mohammadaminulhaque.com',
   outputPath: path.join(__dirname, '../ranking-analysis.json'),
   recommendationsPath: path.join(__dirname, '../seo-recommendations.json'),
   checkInterval: 24 * 60 * 60 * 1000, // 24 hours

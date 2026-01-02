@@ -19,8 +19,8 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.mohammadaminulhaque.net',
-  sitemapUrl: 'https://www.mohammadaminulhaque.net/sitemap.xml',
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.mohammadaminulhaque.com',
+  sitemapUrl: 'https://www.mohammadaminulhaque.com/sitemap.xml',
   searchEngines: [
     {
       name: 'Google',

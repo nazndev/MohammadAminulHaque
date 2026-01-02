@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CONFIG = {
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.mohammadaminulhaque.net',
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.mohammadaminulhaque.com',
   newsDataPath: path.join(__dirname, '../data/news-data.json'),
   outputPath: path.join(__dirname, '../social-media-posts.json'),
 };

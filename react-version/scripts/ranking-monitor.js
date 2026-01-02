@@ -18,7 +18,7 @@ const path = require('path');
 
 // Configuration
 const CONFIG = {
-  targetDomain: 'mohammadaminulhaque.net',
+  targetDomain: 'mohammadaminulhaque.com',
   keywords: [
     'Mohammad Aminul Haque',
     'Mohammad Aminul Haque banker',
