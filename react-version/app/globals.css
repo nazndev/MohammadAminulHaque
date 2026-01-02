@@ -1,3 +1,4 @@
+/* Tailwind CSS directives - processed by PostCSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,6 +60,28 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Animated Gradient Text for Hero Subtitle */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-subtitle {
+  animation: gradientText 3s ease-in-out infinite;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, #fdba12 50%, rgba(255, 255, 255, 0.9) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Hero Section Animations - Financial/Banking Theme */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -101,6 +124,62 @@ body {
   );
   background-size: 2000px 100%;
   animation: shimmer 8s linear infinite;
+}
+
+/* Scroll-triggered animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section-animate {
+  animation: slideInUp 0.8s ease-out;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section background gradients */
+.section-dark-1 {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%);
+}
+
+.section-dark-2 {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+}
+
+.section-dark-3 {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.92) 50%, rgba(15, 23, 42, 0.98) 100%);
 }
 
 /* Premium Navigation Styles */
@@ -186,6 +265,114 @@ body {
 .ant-menu-dark.ant-menu-horizontal .ant-menu-item:hover,
 .ant-menu-dark.ant-menu-horizontal .ant-menu-item-selected {
   border-bottom: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Custom Button Styles - Yellow Background with Dark Navy Text */
+.ant-btn-primary {
+  background: #fdba12 !important;
+  border-color: #fdba12 !important;
+  color: #0d244f !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  color: #0d244f !important;
+}
+
+.ant-btn-primary:active {
+  background: #f59e0b !important;
+  border-color: #f59e0b !important;
+  color: #0d244f !important;
+}
+
+/* Scroll to Top Button Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-to-top-btn {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Header Search Input Styling */
+.header-search-input * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.header-search-input .ant-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 8px 0 0 8px !important;
+}
+
+.header-search-input .ant-input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.header-search-input .ant-input:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.header-search-input .ant-input:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+.header-search-input .ant-input-group-addon {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-left: none !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.header-search-input .ant-input-group-addon button {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.header-search-input .ant-input-group-addon button:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.header-search-input .ant-input-group-addon button svg,
+.header-search-input .ant-input-group-addon button .anticon {
+  color: #fdba12 !important;
+  fill: #fdba12 !important;
+}
+
+.header-search-input .ant-input-group-addon button:hover svg,
+.header-search-input .ant-input-group-addon button:hover .anticon {
+  color: #fbbf24 !important;
+  fill: #fbbf24 !important;
+}
+
+/* Target the search icon directly */
+.header-search-input .anticon-search {
+  color: #fdba12 !important;
+  fill: #fdba12 !important;
+}
+
+.header-search-input .anticon-search svg {
+  color: #fdba12 !important;
+  fill: #fdba12 !important;
+}
+
+.header-search-input .ant-input-group-addon button {
+  color: #fdba12 !important;
 }
 
 /* Super White Navigation Text */

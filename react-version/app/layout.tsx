@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Breadcrumb from '@/components/Breadcrumb';
+import ScrollToTop from '@/components/ScrollToTop';
 import { config } from '@/lib/config';
 import { generateStructuredData } from '@/components/SEO';
 
@@ -166,6 +167,7 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
+              <ScrollToTop />
             </div>
           </ConfigProvider>
         </AntdRegistry>

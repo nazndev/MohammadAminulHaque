@@ -138,11 +138,11 @@ export default function HomePage() {
           </Title>
           <Title
             level={2}
+            className="animated-subtitle"
             style={{
               fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
               fontWeight: 400,
               marginBottom: '32px',
-              color: 'rgba(255, 255, 255, 0.9)',
               lineHeight: 1.5,
               textShadow: '0 1px 10px rgba(0, 0, 0, 0.2)',
             }}
@@ -173,22 +173,21 @@ export default function HomePage() {
                 fontSize: '1rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                background: 'rgba(255, 255, 255, 0.15)',
-                borderColor: 'rgba(255, 255, 255, 0.3)',
-                color: '#ffffff',
-                backdropFilter: 'blur(10px)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+                background: '#fdba12 !important',
+                borderColor: '#fdba12',
+                color: '#0d244f !important',
+                boxShadow: '0 4px 12px rgba(253, 186, 18, 0.3)',
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.background = '#fbbf24';
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(253, 186, 18, 0.4)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.background = '#fdba12';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(253, 186, 18, 0.3)';
               }}
             >
               View Latest News & Research
@@ -197,12 +196,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section - Clean Layout */}
+      {/* About Section - Dark Sophisticated */}
       <section
         id="about"
+        className="section-animate section-dark-1"
         style={{
           padding: '80px 24px',
-          background: '#fafafa',
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%)',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -213,48 +214,52 @@ export default function HomePage() {
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 marginBottom: '16px',
-                color: '#1e293b',
+                color: '#ffffff',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
               }}
             >
               About
             </Title>
-            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: 'rgba(255, 255, 255, 0.5)', borderWidth: '3px' }} />
           </div>
           
           <div style={{ maxWidth: '900px', margin: '0 auto', width: '100%' }}>
             <Card
+              className="card-hover glass-card"
               style={{
-                border: 'none',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+                borderRadius: '16px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
               }}
             >
-              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: '#5a6c7d', marginBottom: '20px' }}>
-                <strong style={{ color: '#2c3e50' }}>Mohammad Aminul Haque</strong> is a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with 19+ years of cross-regional experience along with Management Consultancy in Fortune 500 companies in Australia, Singapore, Brunei, Indonesia, Malaysia, Philippines and South Asia.
+              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: 'rgba(255, 255, 255, 0.9)', marginBottom: '20px' }}>
+                <strong style={{ color: '#ffffff' }}>Mohammad Aminul Haque</strong> is a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with 19+ years of cross-regional experience along with Management Consultancy in Fortune 500 companies in Australia, Singapore, Brunei, Indonesia, Malaysia, Philippines and South Asia.
               </Paragraph>
-              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: '#5a6c7d', marginBottom: '20px' }}>
+              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: 'rgba(255, 255, 255, 0.9)', marginBottom: '20px' }}>
                 Currently based in Sydney on Global Talent PR, he brings expertise in banking, strategy execution, customer experience, and transformation of business and customer outcomes. Apart from his outstanding banking career in Standard Chartered Bank and BRAC Bank, he also led transformation, change management, productivity improvement and cost optimization projects for Bank Mandiri (Indonesia), Brunei Shell, BP Indonesia while working as management consultant for Renoir Consulting.
               </Paragraph>
-              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: '#5a6c7d', marginBottom: '20px' }}>
+              <Paragraph style={{ fontSize: '1.125rem', lineHeight: 1.9, color: 'rgba(255, 255, 255, 0.9)', marginBottom: '20px' }}>
                 He led a transformation project to shape one of Asia's fastest growing fintech from scratch to 62M+ registered users and $80M+ daily transactions through implementing new ways of working and by uplifting revenue with minimized risk.
               </Paragraph>
-              <Divider style={{ margin: '32px 0' }} />
+              <Divider style={{ margin: '32px 0', borderColor: 'rgba(255, 255, 255, 0.1)' }} />
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
                 <div>
-                  <Title level={5} style={{ color: '#2c3e50', marginBottom: '12px', fontSize: '1rem', fontWeight: 600 }}>
+                  <Title level={5} style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1rem', fontWeight: 600 }}>
                     Education
                   </Title>
-                  <Paragraph style={{ color: '#5a6c7d', margin: 0, fontSize: '0.95rem' }}>
+                  <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', margin: 0, fontSize: '0.95rem' }}>
                     MBA (Finance) from University of Nottingham (2012)<br />
                     BBA (Finance & Accounting) from North South University, Bangladesh (2005)<br />
                     CGPA 3.97/4.0 and Gold Medal
                   </Paragraph>
                 </div>
                 <div>
-                  <Title level={5} style={{ color: '#2c3e50', marginBottom: '12px', fontSize: '1rem', fontWeight: 600 }}>
+                  <Title level={5} style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1rem', fontWeight: 600 }}>
                     Research
                   </Title>
-                  <Paragraph style={{ color: '#5a6c7d', margin: 0, fontSize: '0.95rem' }}>
+                  <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', margin: 0, fontSize: '0.95rem' }}>
                     Co-authored a highly cited research paper on Islamic Bonds (Sukuk) vs Conventional Bonds published in Borsa Istanbul Review (ScienceDirect, Elsevier), one of the highest cited publications in Islamic Bond research.
                   </Paragraph>
                 </div>
@@ -262,11 +267,16 @@ export default function HomePage() {
               <div style={{ marginTop: '32px', textAlign: 'center' }}>
                 <Link href="/about" style={{ textDecoration: 'none' }}>
                   <Button
-                    type="link"
+                    type="primary"
                     style={{
-                      color: '#1e3a8a',
+                      background: '#fdba12 !important',
+                      borderColor: '#fdba12',
+                      color: '#0d244f !important',
                       fontWeight: 600,
                       padding: '0 24px',
+                      height: '40px',
+                      borderRadius: '8px',
+                      boxShadow: '0 2px 8px rgba(253, 186, 18, 0.3)',
                     }}
                   >
                     Learn More About Me →
@@ -278,12 +288,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Experience Preview Section */}
+      {/* Experience Preview Section - Dark Sophisticated */}
       <section
         id="experience"
+        className="section-animate section-dark-2"
         style={{
           padding: '80px 24px',
-          background: '#ffffff',
+          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%)',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -294,13 +306,14 @@ export default function HomePage() {
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 marginBottom: '16px',
-                color: '#1e293b',
+                color: '#ffffff',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
               }}
             >
               Professional Experience
             </Title>
-            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: 'rgba(255, 255, 255, 0.5)', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               19+ years of cross-regional experience in Banking, Fintech, Strategy, Transformation & Wealth Management
             </Paragraph>
           </div>
@@ -308,11 +321,14 @@ export default function HomePage() {
           <Row gutter={[24, 24]}>
             <Col xs={24} md={12}>
               <Card
+                className="card-hover glass-card"
                 style={{
                   height: '100%',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                   borderRadius: '16px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
                 }}
               >
                 <div style={{ marginBottom: '16px' }}>
@@ -322,36 +338,39 @@ export default function HomePage() {
                       padding: '4px 12px',
                       borderRadius: '12px',
                       fontWeight: 600,
-                      background: '#d1fae5',
-                      color: '#065f46',
-                      border: '1px solid #10b981',
+                      background: 'rgba(16, 185, 129, 0.2)',
+                      color: '#10b981',
+                      border: '1px solid rgba(16, 185, 129, 0.4)',
                       display: 'inline-block',
                     }}>
                       Current
                     </span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                    <BankOutlined style={{ fontSize: '24px', color: '#1e3a8a' }} />
-                    <Title level={4} style={{ margin: 0, color: '#1e293b', fontSize: '1.25rem' }}>
+                    <BankOutlined style={{ fontSize: '24px', color: 'rgba(255, 255, 255, 0.9)' }} />
+                    <Title level={4} style={{ margin: 0, color: '#ffffff', fontSize: '1.25rem' }}>
                       Executive Director, Transformation & Strategy
                     </Title>
                   </div>
-                  <Paragraph style={{ margin: '4px 0 0 0', color: '#64748b', fontSize: '0.938rem' }}>
+                  <Paragraph style={{ margin: '4px 0 0 0', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.938rem' }}>
                     Fintech Consulting Firm • Sydney, Australia
                   </Paragraph>
                 </div>
-                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.938rem', marginBottom: '16px' }}>
                   Leading digital transformation projects, managing deposit and lending products, and driving fintech innovation. Achieved 62M+ registered users and $80M+ daily transactions.
                 </Paragraph>
               </Card>
             </Col>
             <Col xs={24} md={12}>
               <Card
+                className="card-hover glass-card"
                 style={{
                   height: '100%',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                   borderRadius: '16px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
                 }}
               >
                 <div style={{ marginBottom: '16px' }}>
@@ -361,25 +380,25 @@ export default function HomePage() {
                       padding: '4px 12px',
                       borderRadius: '12px',
                       fontWeight: 600,
-                      background: '#eff6ff',
-                      color: '#1e40af',
-                      border: '1px solid #3b82f6',
+                      background: 'rgba(59, 130, 246, 0.2)',
+                      color: '#60a5fa',
+                      border: '1px solid rgba(59, 130, 246, 0.4)',
                       display: 'inline-block',
                     }}>
                       Sep 2012 – June 2019
                     </span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                    <BankOutlined style={{ fontSize: '24px', color: '#1e3a8a' }} />
-                    <Title level={4} style={{ margin: 0, color: '#1e293b', fontSize: '1.25rem' }}>
+                    <BankOutlined style={{ fontSize: '24px', color: 'rgba(255, 255, 255, 0.9)' }} />
+                    <Title level={4} style={{ margin: 0, color: '#ffffff', fontSize: '1.25rem' }}>
                       Project Manager, South East Asia
                     </Title>
                   </div>
-                  <Paragraph style={{ margin: '4px 0 0 0', color: '#64748b', fontSize: '0.938rem' }}>
+                  <Paragraph style={{ margin: '4px 0 0 0', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.938rem' }}>
                     Renoir Consulting Ltd • Multiple Countries
                   </Paragraph>
                 </div>
-                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.938rem', marginBottom: '16px' }}>
                   Led transformation projects for Fortune 500 companies including Bank Mandiri, Brunei Shell, and BP Indonesia. Achieved USD 9M cost savings and 11.6% productivity improvements.
                 </Paragraph>
               </Card>
@@ -388,12 +407,17 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
             <Link href="/experience" style={{ textDecoration: 'none' }}>
               <Button
-                type="link"
+                type="primary"
                 style={{
-                  color: '#1e3a8a',
+                  background: '#fdba12 !important',
+                  borderColor: '#fdba12',
+                  color: '#0d244f !important',
                   fontWeight: 600,
                   padding: '0 24px',
                   fontSize: '1rem',
+                  height: '40px',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(253, 186, 18, 0.3)',
                 }}
               >
                 View Full Experience →
@@ -403,12 +427,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Research Preview Section */}
+      {/* Research Preview Section - Dark Sophisticated */}
       <section
         id="research"
+        className="section-animate section-dark-3"
         style={{
           padding: '80px 24px',
-          background: '#fafafa',
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.92) 50%, rgba(15, 23, 42, 0.98) 100%)',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -419,25 +445,29 @@ export default function HomePage() {
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 marginBottom: '16px',
-                color: '#1e293b',
+                color: '#ffffff',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
               }}
             >
               Research & Publications
             </Title>
-            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: 'rgba(255, 255, 255, 0.5)', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Internationally published research in Islamic Finance and Capital Markets
             </Paragraph>
           </div>
 
           <Card
+            className="card-hover glass-card"
             style={{
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
               borderRadius: '16px',
               maxWidth: '900px',
               margin: '0 auto',
               width: '100%',
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)',
             }}
           >
             <div style={{ marginBottom: '20px' }}>
@@ -447,9 +477,9 @@ export default function HomePage() {
                   padding: '4px 12px',
                   borderRadius: '12px',
                   fontWeight: 600,
-                  background: '#dbeafe',
-                  color: '#1e40af',
-                  border: '1px solid #3b82f6',
+                  background: 'rgba(59, 130, 246, 0.2)',
+                  color: '#60a5fa',
+                  border: '1px solid rgba(59, 130, 246, 0.4)',
                   display: 'inline-block',
                 }}>
                   Research
@@ -459,35 +489,35 @@ export default function HomePage() {
                   padding: '4px 12px',
                   borderRadius: '12px',
                   fontWeight: 600,
-                  background: '#eff6ff',
-                  color: '#1e40af',
-                  border: '1px solid #3b82f6',
+                  background: 'rgba(99, 102, 241, 0.2)',
+                  color: '#818cf8',
+                  border: '1px solid rgba(99, 102, 241, 0.4)',
                   display: 'inline-block',
                 }}>
                   2013
                 </span>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                <BookOutlined style={{ fontSize: '24px', color: '#1e3a8a', marginTop: '4px', flexShrink: 0 }} />
+                <BookOutlined style={{ fontSize: '24px', color: 'rgba(255, 255, 255, 0.9)', marginTop: '4px', flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
-                  <Title level={4} style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1.25rem', lineHeight: 1.4 }}>
+                  <Title level={4} style={{ margin: '0 0 12px 0', color: '#ffffff', fontSize: '1.25rem', lineHeight: 1.4 }}>
                     Are Islamic Bonds Different from Conventional Bonds? International Evidence from Capital Market Tests
                   </Title>
-                  <Paragraph style={{ color: '#64748b', fontSize: '0.938rem', marginBottom: '12px' }}>
-                    <strong>Authors:</strong> Nafis Alam, M. Kabir Hassan, Mohammad Aminul Haque<br />
-                    <strong>Journal:</strong> Borsa Istanbul Review (Elsevier, ScienceDirect)<br />
-                    <strong>Volume:</strong> 13, Issue 3
+                  <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.938rem', marginBottom: '12px' }}>
+                    <strong style={{ color: '#ffffff' }}>Authors:</strong> Nafis Alam, M. Kabir Hassan, Mohammad Aminul Haque<br />
+                    <strong style={{ color: '#ffffff' }}>Journal:</strong> Borsa Istanbul Review (Elsevier, ScienceDirect)<br />
+                    <strong style={{ color: '#ffffff' }}>Volume:</strong> 13, Issue 3
                   </Paragraph>
-                <Paragraph style={{ color: '#5a6c7d', fontSize: '0.938rem', marginBottom: '16px' }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.938rem', marginBottom: '16px' }}>
                   This high-impact research paper examines the fundamental differences between Islamic bonds (Sukuk) and conventional bonds in global capital markets. The study analyzes 166 bond issuances across multiple international markets.
                 </Paragraph>
                 <div style={{ 
                   padding: '12px 16px', 
-                  background: '#f8fafc', 
+                  background: 'rgba(255, 255, 255, 0.1)', 
                   borderRadius: '8px',
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
                 }}>
-                  <Paragraph style={{ margin: 0, color: '#1e293b', fontWeight: 600, fontSize: '0.938rem' }}>
+                  <Paragraph style={{ margin: 0, color: '#ffffff', fontWeight: 600, fontSize: '0.938rem' }}>
                     One of the highest cited publications in Islamic Bond research
                   </Paragraph>
                 </div>
@@ -498,12 +528,17 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
             <Link href="/research" style={{ textDecoration: 'none' }}>
               <Button
-                type="link"
+                type="primary"
                 style={{
-                  color: '#1e3a8a',
+                  background: '#fdba12 !important',
+                  borderColor: '#fdba12',
+                  color: '#0d244f !important',
                   fontWeight: 600,
                   padding: '0 24px',
                   fontSize: '1rem',
+                  height: '40px',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(253, 186, 18, 0.3)',
                 }}
               >
                 View Full Research →
@@ -513,12 +548,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Achievements Preview Section */}
+      {/* Achievements Preview Section - Dark Sophisticated */}
       <section
         id="achievements"
+        className="section-animate section-dark-2"
         style={{
           padding: '80px 24px',
-          background: '#ffffff',
+          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%)',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -529,13 +566,14 @@ export default function HomePage() {
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 marginBottom: '16px',
-                color: '#1e293b',
+                color: '#ffffff',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
               }}
             >
               Achievements & Awards
             </Title>
-            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: 'rgba(255, 255, 255, 0.5)', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Recognitions, awards, and achievements in banking, fintech, and finance
             </Paragraph>
           </div>
@@ -543,11 +581,14 @@ export default function HomePage() {
           <Row gutter={[24, 24]}>
             <Col xs={24} sm={12} md={8}>
               <Card
+                className="card-hover glass-card"
                 style={{
                   height: '100%',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                   borderRadius: '16px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
                 }}
               >
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -556,9 +597,9 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#fef3c7',
-                    color: '#92400e',
-                    border: '1px solid #fbbf24',
+                    background: 'rgba(251, 191, 36, 0.2)',
+                    color: '#fbbf24',
+                    border: '1px solid rgba(251, 191, 36, 0.4)',
                     display: 'inline-block',
                   }}>
                     Award
@@ -568,30 +609,33 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#eff6ff',
-                    color: '#1e40af',
-                    border: '1px solid #3b82f6',
+                    background: 'rgba(59, 130, 246, 0.2)',
+                    color: '#60a5fa',
+                    border: '1px solid rgba(59, 130, 246, 0.4)',
                     display: 'inline-block',
                   }}>
                     2022
                   </span>
                 </div>
-                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
-                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                <TrophyOutlined style={{ fontSize: '32px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.125rem' }}>
                   Best DFS Innovative Award
                 </Title>
-                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.875rem', margin: 0 }}>
                   Dubai Financial Services
                 </Paragraph>
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8}>
               <Card
+                className="card-hover glass-card"
                 style={{
                   height: '100%',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                   borderRadius: '16px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
                 }}
               >
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -600,9 +644,9 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#fef3c7',
-                    color: '#92400e',
-                    border: '1px solid #fbbf24',
+                    background: 'rgba(251, 191, 36, 0.2)',
+                    color: '#fbbf24',
+                    border: '1px solid rgba(251, 191, 36, 0.4)',
                     display: 'inline-block',
                   }}>
                     Award
@@ -612,30 +656,33 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#eff6ff',
-                    color: '#1e40af',
-                    border: '1px solid #3b82f6',
+                    background: 'rgba(59, 130, 246, 0.2)',
+                    color: '#60a5fa',
+                    border: '1px solid rgba(59, 130, 246, 0.4)',
                     display: 'inline-block',
                   }}>
                     2021
                   </span>
                 </div>
-                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
-                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                <TrophyOutlined style={{ fontSize: '32px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.125rem' }}>
                   Mastercard Excellence Award
                 </Title>
-                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.875rem', margin: 0 }}>
                   Mastercard
                 </Paragraph>
               </Card>
             </Col>
             <Col xs={24} sm={12} md={8}>
               <Card
+                className="card-hover glass-card"
                 style={{
                   height: '100%',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
                   borderRadius: '16px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
                 }}
               >
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -644,9 +691,9 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#d1fae5',
-                    color: '#065f46',
-                    border: '1px solid #10b981',
+                    background: 'rgba(16, 185, 129, 0.2)',
+                    color: '#10b981',
+                    border: '1px solid rgba(16, 185, 129, 0.4)',
                     display: 'inline-block',
                   }}>
                     Achievement
@@ -656,19 +703,19 @@ export default function HomePage() {
                     padding: '4px 12px',
                     borderRadius: '12px',
                     fontWeight: 600,
-                    background: '#eff6ff',
-                    color: '#1e40af',
-                    border: '1px solid #3b82f6',
+                    background: 'rgba(59, 130, 246, 0.2)',
+                    color: '#60a5fa',
+                    border: '1px solid rgba(59, 130, 246, 0.4)',
                     display: 'inline-block',
                   }}>
                     2020
                   </span>
                 </div>
-                <TrophyOutlined style={{ fontSize: '32px', color: '#1e3a8a', marginBottom: '12px' }} />
-                <Title level={4} style={{ margin: '0 0 8px 0', color: '#1e293b', fontSize: '1.125rem' }}>
+                <TrophyOutlined style={{ fontSize: '32px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '12px' }} />
+                <Title level={4} style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1.125rem' }}>
                   62M+ Users & $80M+ Daily Transactions
                 </Title>
-                <Paragraph style={{ color: '#64748b', fontSize: '0.875rem', margin: 0 }}>
+                <Paragraph style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.875rem', margin: 0 }}>
                   Fintech Transformation
                 </Paragraph>
               </Card>
@@ -677,12 +724,17 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginTop: '32px' }}>
             <Link href="/achievements" style={{ textDecoration: 'none' }}>
               <Button
-                type="link"
+                type="primary"
                 style={{
-                  color: '#1e3a8a',
+                  background: '#fdba12 !important',
+                  borderColor: '#fdba12',
+                  color: '#0d244f !important',
                   fontWeight: 600,
                   padding: '0 24px',
                   fontSize: '1rem',
+                  height: '40px',
+                  borderRadius: '8px',
+                  boxShadow: '0 2px 8px rgba(253, 186, 18, 0.3)',
                 }}
               >
                 View All Achievements →
@@ -692,12 +744,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* News Section - Clean Grid */}
+      {/* News Section - Dark Sophisticated */}
       <section
         id="news"
+        className="section-animate section-dark-1"
         style={{
           padding: '80px 24px',
-          background: '#ffffff',
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 58, 138, 0.9) 100%)',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
@@ -708,13 +762,14 @@ export default function HomePage() {
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
                 marginBottom: '16px',
-                color: '#1e293b',
+                color: '#ffffff',
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
               }}
             >
               Latest News & Updates
             </Title>
-            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
+            <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: 'rgba(255, 255, 255, 0.5)', borderWidth: '3px' }} />
+            <Paragraph style={{ fontSize: '1.125rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Stay updated with the latest news, research publications, and professional achievements
             </Paragraph>
           </div>
@@ -729,14 +784,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - Sophisticated Navy */}
+      {/* Contact Section - Dark Sophisticated */}
       <section
         id="contact"
+        className="section-animate section-dark-2"
         style={{
           padding: '80px 24px',
-          background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #1e3a8a 100%)',
+          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%)',
           textAlign: 'center',
           color: 'white',
+          position: 'relative',
         }}
       >
         <div style={{ maxWidth: '600px', margin: '0 auto', width: '100%' }}>
@@ -777,10 +834,21 @@ export default function HomePage() {
                 fontSize: '1rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                background: 'rgba(30, 58, 138, 0.9)', // Royal blue with slight transparency
-                border: '1px solid rgba(30, 58, 138, 1)',
-                color: '#ffffff',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                background: '#fdba12 !important',
+                borderColor: '#fdba12',
+                color: '#0d244f !important',
+                boxShadow: '0 4px 12px rgba(253, 186, 18, 0.3)',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#fbbf24';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(253, 186, 18, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#fdba12';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(253, 186, 18, 0.3)';
               }}
             >
               Connect on LinkedIn

@@ -18,13 +18,13 @@ export default function NewsCard({ article }: NewsCardProps) {
   });
 
   const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
-    Research: { bg: '#dbeafe', text: '#1e40af', border: '#3b82f6' },
-    Achievement: { bg: '#d1fae5', text: '#065f46', border: '#10b981' },
-    Award: { bg: '#fef3c7', text: '#92400e', border: '#fbbf24' },
-    Media: { bg: '#f3e8ff', text: '#6b21a8', border: '#a855f7' },
-    Event: { bg: '#cffafe', text: '#0e7490', border: '#06b6d4' },
-    Partnership: { bg: '#fed7aa', text: '#9a3412', border: '#fb923c' },
-    Recognition: { bg: '#fce7f3', text: '#9f1239', border: '#f472b6' },
+    Research: { bg: 'rgba(59, 130, 246, 0.2)', text: '#60a5fa', border: 'rgba(59, 130, 246, 0.4)' },
+    Achievement: { bg: 'rgba(16, 185, 129, 0.2)', text: '#10b981', border: 'rgba(16, 185, 129, 0.4)' },
+    Award: { bg: 'rgba(251, 191, 36, 0.2)', text: '#fbbf24', border: 'rgba(251, 191, 36, 0.4)' },
+    Media: { bg: 'rgba(168, 85, 247, 0.2)', text: '#a855f7', border: 'rgba(168, 85, 247, 0.4)' },
+    Event: { bg: 'rgba(6, 182, 212, 0.2)', text: '#06b6d4', border: 'rgba(6, 182, 212, 0.4)' },
+    Partnership: { bg: 'rgba(251, 146, 60, 0.2)', text: '#fb923c', border: 'rgba(251, 146, 60, 0.4)' },
+    Recognition: { bg: 'rgba(244, 114, 182, 0.2)', text: '#f472b6', border: 'rgba(244, 114, 182, 0.4)' },
   };
 
 
@@ -59,21 +59,24 @@ export default function NewsCard({ article }: NewsCardProps) {
 
   const cardContent = (
     <Card
+        className="card-hover glass-card"
         style={{
           height: '100%',
-          border: '1px solid #e2e8f0',
-          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
           borderRadius: '16px',
+          background: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(10px)',
           transition: 'all 0.3s ease',
         }}
         hoverable
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-          e.currentTarget.style.transform = 'translateX(4px)';
+          e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.3)';
+          e.currentTarget.style.transform = 'translateY(-8px)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.05)';
-          e.currentTarget.style.transform = 'translateX(0)';
+          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+          e.currentTarget.style.transform = 'translateY(0)';
         }}
       >
         <div style={{ marginBottom: '16px' }}>
@@ -95,9 +98,9 @@ export default function NewsCard({ article }: NewsCardProps) {
               padding: '4px 12px',
               borderRadius: '12px',
               fontWeight: 600,
-              background: '#eff6ff',
-              color: '#1e40af',
-              border: '1px solid #3b82f6',
+              background: 'rgba(59, 130, 246, 0.2)',
+              color: '#60a5fa',
+              border: '1px solid rgba(59, 130, 246, 0.4)',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
@@ -106,12 +109,12 @@ export default function NewsCard({ article }: NewsCardProps) {
               {date}
             </span>
           </div>
-          <Title level={3} style={{ margin: '0 0 12px 0', color: '#1e293b', fontSize: '1.375rem', lineHeight: 1.3 }}>
+          <Title level={3} style={{ margin: '0 0 12px 0', color: '#ffffff', fontSize: '1.375rem', lineHeight: 1.3 }}>
             {article.title}
           </Title>
         </div>
         
-        <Paragraph style={{ fontSize: '1rem', lineHeight: 1.7, color: '#5a6c7d', marginBottom: '16px' }}>
+        <Paragraph style={{ fontSize: '1rem', lineHeight: 1.7, color: 'rgba(255, 255, 255, 0.85)', marginBottom: '16px' }}>
           {article.excerpt}
         </Paragraph>
         
@@ -121,7 +124,7 @@ export default function NewsCard({ article }: NewsCardProps) {
           justifyContent: 'space-between',
           gap: '12px',
           paddingTop: '16px',
-          borderTop: '1px solid #e2e8f0',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           marginTop: 'auto',
         }}>
           <div style={{
@@ -130,12 +133,12 @@ export default function NewsCard({ article }: NewsCardProps) {
             gap: '8px',
           }}>
             <LinkOutlined style={{ 
-              color: '#1e3a8a', 
+              color: 'rgba(255, 255, 255, 0.9)', 
               fontSize: '0.875rem',
             }} />
             <Text
               style={{
-                color: '#1e3a8a',
+                color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: '0.875rem',
                 fontWeight: 600,
               }}
@@ -146,7 +149,7 @@ export default function NewsCard({ article }: NewsCardProps) {
           {article.sourceUrl && (
             <Text
               style={{
-                color: '#64748b',
+                color: 'rgba(255, 255, 255, 0.7)',
                 fontSize: '0.813rem',
                 fontWeight: 500,
               }}

@@ -157,6 +157,7 @@ export default function Header() {
                 allowClear
                 enterButton={<SearchOutlined />}
                 size="middle"
+                className="header-search-input"
                 style={{
                   maxWidth: '240px',
                   minWidth: '200px',
