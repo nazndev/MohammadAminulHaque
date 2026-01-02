@@ -36,28 +36,102 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(newsSchema) }}
       />
       
-      {/* Hero Section - Clean & Modern */}
+      {/* Hero Section - Sophisticated Dark Crystal */}
       <section
         id="home"
         style={{
-          background: 'linear-gradient(to bottom, #f5f7fa 0%, #ffffff 100%)',
+          background: `
+            linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.85) 50%, rgba(15, 23, 42, 0.95) 100%),
+            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)
+          `,
+          backgroundSize: '100% 100%, 800px 800px, 600px 600px, 500px 500px',
+          backgroundPosition: 'center, 20% 50%, 80% 80%, 40% 20%',
           minHeight: '85vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '140px 24px 80px',
+          padding: '140px 24px 60px',
           marginTop: '0',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <div style={{ maxWidth: '900px', textAlign: 'center' }}>
+        {/* Animated Background Elements - Financial Theme */}
+        <div
+          className="hero-float"
+          style={{
+            position: 'absolute',
+            top: '15%',
+            left: '10%',
+            width: '60px',
+            height: '60px',
+            background: 'rgba(59, 130, 246, 0.1)',
+            borderRadius: '12px',
+            border: '2px solid rgba(59, 130, 246, 0.2)',
+            backdropFilter: 'blur(10px)',
+            opacity: 0.6,
+          }}
+        />
+        <div
+          className="hero-float-reverse"
+          style={{
+            position: 'absolute',
+            top: '25%',
+            right: '15%',
+            width: '40px',
+            height: '40px',
+            background: 'rgba(30, 58, 138, 0.15)',
+            borderRadius: '50%',
+            border: '2px solid rgba(30, 58, 138, 0.3)',
+            backdropFilter: 'blur(10px)',
+            opacity: 0.5,
+          }}
+        />
+        <div
+          className="hero-pulse"
+          style={{
+            position: 'absolute',
+            bottom: '20%',
+            left: '20%',
+            width: '80px',
+            height: '80px',
+            background: 'rgba(99, 102, 241, 0.1)',
+            borderRadius: '16px',
+            border: '2px solid rgba(99, 102, 241, 0.2)',
+            backdropFilter: 'blur(10px)',
+            transform: 'rotate(45deg)',
+          }}
+        />
+        <div
+          className="hero-float"
+          style={{
+            position: 'absolute',
+            bottom: '30%',
+            right: '10%',
+            width: '50px',
+            height: '50px',
+            background: 'rgba(59, 130, 246, 0.12)',
+            borderRadius: '8px',
+            border: '2px solid rgba(59, 130, 246, 0.25)',
+            backdropFilter: 'blur(10px)',
+            opacity: 0.7,
+            transform: 'rotate(-45deg)',
+          }}
+        />
+        
+        {/* Content */}
+        <div style={{ maxWidth: '900px', textAlign: 'center', width: '100%', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <Title
             level={1}
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
               fontWeight: 700,
               marginBottom: '24px',
-              color: '#2c3e50',
+              color: '#ffffff',
               lineHeight: 1.2,
+              textShadow: '0 2px 20px rgba(0, 0, 0, 0.3)',
             }}
           >
             Mohammad Aminul Haque
@@ -68,8 +142,9 @@ export default function HomePage() {
               fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
               fontWeight: 400,
               marginBottom: '32px',
-              color: '#5a6c7d',
+              color: 'rgba(255, 255, 255, 0.9)',
               lineHeight: 1.5,
+              textShadow: '0 1px 10px rgba(0, 0, 0, 0.2)',
             }}
           >
             Senior Banker, Fintech & Finance Expert
@@ -78,13 +153,14 @@ export default function HomePage() {
             style={{
               fontSize: '1.125rem',
               marginBottom: '48px',
-              color: '#5a6c7d',
+              color: 'rgba(255, 255, 255, 0.85)',
               lineHeight: 1.8,
               maxWidth: '700px',
               margin: '0 auto 48px',
+              textShadow: '0 1px 5px rgba(0, 0, 0, 0.2)',
             }}
           >
-            <strong>Mohammad Aminul Haque</strong> is a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with <strong>19+ years of cross-regional experience</strong> in Banking, Fintech, Strategy, Transformation & Wealth Management. Internationally published researcher in <strong>Islamic Finance and Capital Markets</strong>, Mohammad Aminul Haque has led transformation projects for Fortune 500 companies across Australia, Singapore, Brunei, Indonesia, Malaysia, Philippines and South Asia.
+            <strong style={{ color: '#ffffff' }}>Mohammad Aminul Haque</strong> is a Senior Banker, Fintech, Product, Pricing, Change, Transformation, Portfolio, Strategy & Wealth Management specialist with <strong style={{ color: '#ffffff' }}>19+ years of cross-regional experience</strong> in Banking, Fintech, Strategy, Transformation & Wealth Management. Internationally published researcher in <strong style={{ color: '#ffffff' }}>Islamic Finance and Capital Markets</strong>, Mohammad Aminul Haque has led transformation projects for Fortune 500 companies across Australia, Singapore, Brunei, Indonesia, Malaysia, Philippines and South Asia.
           </Paragraph>
           <a href="#news" style={{ textDecoration: 'none', display: 'inline-block' }}>
             <Button
@@ -97,9 +173,22 @@ export default function HomePage() {
                 fontSize: '1rem',
                 fontWeight: 600,
                 borderRadius: '8px',
-                background: '#1e3a8a', // Royal blue
-                borderColor: '#1e3a8a',
-                boxShadow: '0 4px 12px rgba(30, 58, 138, 0.3)',
+                background: 'rgba(255, 255, 255, 0.15)',
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                color: '#ffffff',
+                backdropFilter: 'blur(10px)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)';
               }}
             >
               View Latest News & Research
@@ -112,12 +201,12 @@ export default function HomePage() {
       <section
         id="about"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: '#fafafa',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <Title
               level={2}
               style={{
@@ -132,7 +221,7 @@ export default function HomePage() {
             <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
           </div>
           
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto', width: '100%' }}>
             <Card
               style={{
                 border: 'none',
@@ -193,12 +282,12 @@ export default function HomePage() {
       <section
         id="experience"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: '#ffffff',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <Title
               level={2}
               style={{
@@ -211,7 +300,7 @@ export default function HomePage() {
               Professional Experience
             </Title>
             <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               19+ years of cross-regional experience in Banking, Fintech, Strategy, Transformation & Wealth Management
             </Paragraph>
           </div>
@@ -318,12 +407,12 @@ export default function HomePage() {
       <section
         id="research"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: '#fafafa',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <Title
               level={2}
               style={{
@@ -336,7 +425,7 @@ export default function HomePage() {
               Research & Publications
             </Title>
             <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Internationally published research in Islamic Finance and Capital Markets
             </Paragraph>
           </div>
@@ -348,6 +437,7 @@ export default function HomePage() {
               borderRadius: '16px',
               maxWidth: '900px',
               margin: '0 auto',
+              width: '100%',
             }}
           >
             <div style={{ marginBottom: '20px' }}>
@@ -427,12 +517,12 @@ export default function HomePage() {
       <section
         id="achievements"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: '#ffffff',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <Title
               level={2}
               style={{
@@ -445,7 +535,7 @@ export default function HomePage() {
               Achievements & Awards
             </Title>
             <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Recognitions, awards, and achievements in banking, fintech, and finance
             </Paragraph>
           </div>
@@ -606,12 +696,12 @@ export default function HomePage() {
       <section
         id="news"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: '#ffffff',
         }}
       >
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <Title
               level={2}
               style={{
@@ -624,7 +714,7 @@ export default function HomePage() {
               Latest News & Updates
             </Title>
             <Divider style={{ margin: '24px auto', maxWidth: '80px', borderColor: '#1e3a8a', borderWidth: '3px' }} />
-            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto' }}>
+            <Paragraph style={{ fontSize: '1.125rem', color: '#5a6c7d', maxWidth: '600px', margin: '0 auto', width: '100%' }}>
               Stay updated with the latest news, research publications, and professional achievements
             </Paragraph>
           </div>
@@ -643,13 +733,13 @@ export default function HomePage() {
       <section
         id="contact"
         style={{
-          padding: '100px 24px',
+          padding: '80px 24px',
           background: 'linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #1e3a8a 100%)',
           textAlign: 'center',
           color: 'white',
         }}
       >
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto', width: '100%' }}>
           <Title
             level={2}
             style={{

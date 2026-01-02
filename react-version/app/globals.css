@@ -59,6 +59,50 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Hero Section Animations - Financial/Banking Theme */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-float-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+.hero-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 58, 138, 0.1) 0%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(30, 58, 138, 0.1) 100%
+  );
+  background-size: 2000px 100%;
+  animation: shimmer 8s linear infinite;
+}
+
 /* Premium Navigation Styles */
 .ant-menu-horizontal {
   border-bottom: none !important;
@@ -79,9 +123,14 @@ body {
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover {
-  border-bottom-color: #2563eb !important;
-  color: #2563eb !important;
+  border-bottom-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   background: transparent !important;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover::after {
@@ -89,9 +138,14 @@ body {
 }
 
 .ant-menu-horizontal > .ant-menu-item-selected {
-  border-bottom-color: #2563eb !important;
-  color: #2563eb !important;
+  border-bottom-color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 1) !important;
   font-weight: 600 !important;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item-selected {
+  border-bottom-color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item-selected::after {
@@ -105,8 +159,12 @@ body {
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover a {
-  color: #2563eb !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   text-decoration: none !important;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover a {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Remove all default Ant Design menu underlines and borders */
@@ -122,5 +180,51 @@ body {
 
 .ant-menu-horizontal .ant-menu-item:hover,
 .ant-menu-horizontal .ant-menu-item-selected {
-  border-bottom: 2px solid #2563eb !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.ant-menu-dark.ant-menu-horizontal .ant-menu-item:hover,
+.ant-menu-dark.ant-menu-horizontal .ant-menu-item-selected {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Super White Navigation Text */
+.super-white-nav .ant-menu-item,
+.super-white-nav .ant-menu-item a,
+.ant-menu-dark.super-white-nav .ant-menu-item,
+.ant-menu-dark.super-white-nav .ant-menu-item a {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+.super-white-nav .ant-menu-item:hover,
+.super-white-nav .ant-menu-item:hover a,
+.ant-menu-dark.super-white-nav .ant-menu-item:hover,
+.ant-menu-dark.super-white-nav .ant-menu-item:hover a {
+  color: #ffffff !important;
+  opacity: 0.95 !important;
+}
+
+.super-white-nav .ant-menu-item-selected,
+.super-white-nav .ant-menu-item-selected a,
+.ant-menu-dark.super-white-nav .ant-menu-item-selected,
+.ant-menu-dark.super-white-nav .ant-menu-item-selected a {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Ensure all menu items in dark theme are white */
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-item a {
+  color: #ffffff !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item:hover a {
+  color: #ffffff !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-dark .ant-menu-item-selected a {
+  color: #ffffff !important;
 }

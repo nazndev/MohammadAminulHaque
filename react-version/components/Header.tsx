@@ -98,14 +98,14 @@ export default function Header() {
         position: 'sticky', 
         top: 0, 
         zIndex: 1000,
-        background: scrolled ? 'rgba(255, 255, 255, 0.98)' : '#fafafa',
+        background: 'rgba(30, 58, 138, 0.9)',
         backdropFilter: 'blur(20px)',
-        borderBottom: scrolled ? '1px solid #e2e8f0' : 'none',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         padding: '0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)' : 'none',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         transition: 'all 0.3s ease',
         height: '80px',
         overflow: 'visible',
@@ -124,7 +124,7 @@ export default function Header() {
           <div style={{ 
             fontSize: 'clamp(1rem, 2vw, 1.5rem)', 
             fontWeight: 700,
-            color: '#2c3e50',
+            color: '#ffffff',
             letterSpacing: '-0.02em',
             fontFamily: 'Inter, -apple-system, sans-serif',
             whiteSpace: 'nowrap',
@@ -142,14 +142,15 @@ export default function Header() {
                 style={{
                   background: 'transparent',
                   border: 'none',
-                  color: '#2c3e50',
+                  color: '#ffffff',
                   flex: 1,
                   minWidth: 0,
                   fontWeight: 500,
                   fontSize: '0.9rem',
                   justifyContent: 'flex-end',
                 }}
-                theme="light"
+                theme="dark"
+                className="super-white-nav"
               />
               <Search
                 placeholder="Search..."
@@ -186,7 +187,7 @@ export default function Header() {
                 icon={<MenuOutlined />}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 style={{ 
-                color: '#2c3e50',
+                color: '#ffffff',
                   fontSize: '1.25rem',
                   height: '48px',
                   width: '48px',
@@ -198,10 +199,10 @@ export default function Header() {
                   top: '80px',
                   left: 0,
                   right: 0,
-                  background: '#f8fafc',
+                  background: 'rgba(30, 58, 138, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  borderTop: '1px solid #e2e8f0',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
                   padding: '24px',
                 }}>
                   <Menu
@@ -211,7 +212,8 @@ export default function Header() {
                       background: 'transparent',
                       border: 'none',
                     }}
-                    theme="light"
+                    theme="dark"
+                    className="super-white-nav"
                     onClick={() => setMobileMenuOpen(false)}
                   />
                 </div>
